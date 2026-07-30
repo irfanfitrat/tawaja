@@ -1,1111 +1,1199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TAWAJA Group - Attention to the Future. A UAE-based holding company building innovative businesses across multiple industries.">
-    <title>TAWAJA Group | Attention to the Future</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAWAJA — Attention. Focus. Future.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141414;
+    --ink-2:#1c1c1c;
+    --paper:#ffffff;
+    --paper-2:#f2f0ed;
+    --signal:#a9622c;
+    --signal-dim:#8a4f23;
+    --signal-bright:#c17a3f;
+    --static:#6b6864;
+    --graphite:#9a978f;
+    --line-dark:rgba(255,255,255,0.14);
+    --line-light:rgba(20,20,20,0.12);
+    --ease:cubic-bezier(.16,.84,.36,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--signal);color:var(--paper);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
 
-    <style>
-        /* CSS Variables */
-        :root {
-            --primary: #0B0B0B;
-            --secondary: #FFFFFF;
-            --accent: #C9A227;
-            --blue: #0F4C81;
-            --surface: rgba(255, 255, 255, 0.03);
-            --surface-border: rgba(255, 255, 255, 0.08);
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+  h1,h2,h3, .display{
+    font-family:'Archivo Expanded',sans-serif;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    line-height:0.98;
+    text-transform:uppercase;
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--signal);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--signal);
+    display:inline-block;
+  }
 
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  :focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+  }
 
-        html {
-            scroll-behavior: smooth;
-        }
+  .wrap{
+    max-width:1280px;
+    margin:0 auto;
+    padding:0 48px;
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 22px;}
+  }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--primary);
-            color: var(--secondary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    padding:22px 0;
+    background:linear-gradient(to bottom, rgba(10,10,12,0.85), rgba(10,10,12,0));
+    transition:background .4s var(--ease), padding .4s var(--ease);
+  }
+  header.scrolled{
+    background:rgba(10,10,12,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    border-bottom:1px solid var(--line-dark);
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo-mark{
+    height:26px;
+    width:auto;
+  }
+  .nav-links{
+    display:flex;
+    gap:38px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--paper);
+    opacity:0.75;
+    transition:opacity .25s;
+    position:relative;
+  }
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink);
+    background:var(--paper);
+    padding:10px 20px;
+    border-radius:2px;
+    border:1px solid var(--paper);
+    transition:background .25s, color .25s, border-color .25s;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{
+    background:var(--signal);
+    border-color:var(--signal);
+    color:var(--paper);
+  }
+  .nav-toggle{display:none;}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{
+      display:block;
+      background:none;border:1px solid var(--line-dark);
+      color:var(--paper);
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      letter-spacing:.1em;
+      padding:8px 14px;
+      border-radius:2px;
+    }
+  }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.2;
-        }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:var(--ink);
+    color:var(--paper);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+  }
+  #noise-canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding-top:110px;
+    padding-bottom:70px;
+  }
+  .hero-eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.28em;
+    color:var(--static);
+    margin-bottom:26px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .hero-eyebrow .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--signal);
+    box-shadow:0 0 10px var(--signal);
+    animation:pulse 1.8s infinite ease-in-out;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.4;transform:scale(.7);}
+  }
+  .hero h1{
+    font-size:clamp(48px, 9vw, 128px);
+    color:var(--paper);
+    max-width:1100px;
+  }
+  .hero h1 span{color:var(--signal);}
+  .hero-sub{
+    margin-top:34px;
+    max-width:560px;
+    font-size:18px;
+    line-height:1.6;
+    color:rgba(255,255,255,0.7);
+    font-weight:400;
+  }
+  .hero-actions{
+    margin-top:46px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .btn-primary{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    background:var(--signal);
+    color:var(--paper);
+    padding:16px 30px;
+    border-radius:2px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:transform .3s var(--ease), background .3s;
+  }
+  .btn-primary:hover{background:var(--signal-bright); transform:translateY(-2px);}
+  .btn-ghost{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--paper);
+    border-bottom:1px solid var(--line-dark);
+    padding-bottom:4px;
+    transition:border-color .3s;
+  }
+  .btn-ghost:hover{border-color:var(--signal);}
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:48px;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    color:var(--static);
+  }
+  .scroll-cue .bar{
+    width:1px;height:38px;
+    background:linear-gradient(var(--static), transparent);
+    position:relative;
+    overflow:hidden;
+  }
+  .scroll-cue .bar::after{
+    content:"";
+    position:absolute;
+    top:-40px;left:0;
+    width:100%;height:40px;
+    background:linear-gradient(var(--signal), transparent);
+    animation:travel 2.2s infinite ease-in-out;
+  }
+  @keyframes travel{
+    0%{top:-40px;}
+    100%{top:38px;}
+  }
+  @media (max-width:640px){
+    .scroll-cue{left:22px;}
+  }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+  /* ---------- SIGNAL DIVIDER ---------- */
+  .signal-divider{
+    height:40px;
+    width:100%;
+  }
 
-        ul {
-            list-style: none;
-        }
+  /* ---------- SECTION GENERIC ---------- */
+  section{
+    padding:130px 0;
+    position:relative;
+  }
+  @media (max-width:640px){
+    section{padding:80px 0;}
+  }
+  .section-head{
+    max-width:680px;
+    margin-bottom:80px;
+  }
+  .section-head h2{
+    font-size:clamp(32px,5vw,58px);
+  }
+  .section-head p{
+    margin-top:22px;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--static);
+    max-width:540px;
+  }
 
-        /* Loader & Scroll Progress */
-        #loader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100vh;
-            background: var(--primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--surface-border);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+  /* reveal on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
 
-        #scroll-progress {
-            position: fixed;
-            top: 0; left: 0; height: 3px;
-            background: var(--accent);
-            width: 0%;
-            z-index: 9998;
-            transition: width 0.1s;
-        }
+  /* ---------- BRAND MEANING ---------- */
+  .meaning{
+    background:var(--paper);
+  }
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-light);
+    border:1px solid var(--line-light);
+  }
+  @media (max-width:860px){
+    .pillars{grid-template-columns:1fr;}
+  }
+  .pillar{
+    background:var(--paper);
+    padding:48px 40px 56px;
+    position:relative;
+  }
+  .pillar .mono.tag{
+    font-size:11px;
+    color:var(--graphite);
+    margin-bottom:22px;
+    display:block;
+  }
+  .pillar h3{
+    font-size:30px;
+    margin-bottom:20px;
+  }
+  .pillar p{
+    color:var(--static);
+    line-height:1.65;
+    font-size:15px;
+    max-width:320px;
+  }
+  .meter{
+    margin-top:34px;
+    display:flex;
+    gap:5px;
+    align-items:flex-end;
+    height:34px;
+  }
+  .meter span{
+    display:block;
+    width:6px;
+    background:var(--paper-2);
+    border-radius:1px;
+    transition:background .3s;
+  }
+  .pillar:nth-child(1) .meter span:nth-child(-n+3){background:var(--signal);}
+  .pillar:nth-child(2) .meter span:nth-child(-n+6){background:var(--signal);}
+  .pillar:nth-child(3) .meter span{background:var(--signal);}
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-        nav.scrolled {
-            background: rgba(11, 11, 11, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--surface-border);
-            padding: 15px 5%;
-        }
-        .logo-container {
-            background: #ffffff;
-            padding: 5px 12px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo-img {
-            height: 32px;
-            width: auto;
-            object-fit: contain;
-        }
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        .nav-links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            opacity: 0.8;
-        }
-        .nav-links a:hover {
-            color: var(--accent);
-            opacity: 1;
-        }
-        .menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+  /* ---------- VISION / MISSION ---------- */
+  .vm{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .vm-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+  }
+  @media (max-width:860px){
+    .vm-grid{grid-template-columns:1fr; gap:60px;}
+  }
+  .vm-block .eyebrow{color:var(--signal);}
+  .vm-block h3{
+    font-size:clamp(26px,3.4vw,40px);
+    text-transform:none;
+    font-weight:700;
+    line-height:1.25;
+    color:var(--paper);
+    letter-spacing:-0.01em;
+  }
+  .vm-block{
+    border-top:1px solid var(--line-dark);
+    padding-top:32px;
+  }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-family: var(--font-heading);
-            font-weight: 500;
-            font-size: 1rem;
-            border-radius: 4px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary {
-            background: var(--accent);
-            color: var(--primary);
-        }
-        .btn-primary:hover {
-            background: #e0b62e;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(201, 162, 39, 0.2);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--secondary);
-            border: 1px solid var(--surface-border);
-        }
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-3px);
-        }
+  /* ---------- FOUNDER ---------- */
+  .founder{
+    background:var(--paper);
+  }
+  .founder-grid{
+    display:grid;
+    grid-template-columns:340px 1fr;
+    gap:70px;
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .founder-grid{grid-template-columns:1fr; gap:40px;}
+  }
+  .founder-photo{
+    position:relative;
+    width:100%;
+    aspect-ratio:4/5;
+    background:var(--ink);
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .founder-photo img{
+    width:100%;height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .founder-photo .placeholder{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    color:rgba(255,255,255,0.35);
+    text-align:center;
+    padding:20px;
+  }
+  .founder-photo .placeholder svg{width:46px;height:46px;stroke:rgba(255,255,255,0.35);}
+  .founder-photo .placeholder span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    line-height:1.6;
+  }
+  .founder-photo .frame-rule{
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:3px;
+    background:var(--signal);
+  }
+  .founder-quote-mark{
+    font-family:'Archivo Expanded',sans-serif;
+    font-size:70px;
+    color:var(--signal);
+    line-height:0.6;
+    margin-bottom:10px;
+    display:block;
+  }
+  .founder-msg blockquote{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    text-transform:none;
+    font-size:clamp(22px,2.6vw,30px);
+    line-height:1.4;
+    color:var(--ink);
+    letter-spacing:0;
+    max-width:640px;
+    margin-bottom:28px;
+  }
+  .founder-msg p{
+    color:var(--static);
+    font-size:16px;
+    line-height:1.75;
+    max-width:620px;
+    margin-bottom:18px;
+  }
+  .founder-sign{
+    margin-top:30px;
+    padding-top:22px;
+    border-top:1px solid var(--line-light);
+  }
+  .founder-sign .name{
+    font-family:'Archivo Expanded',sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:18px;
+    letter-spacing:0.01em;
+  }
+  .founder-sign .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--signal);
+    margin-top:6px;
+    display:block;
+  }
 
-        /* Layout & Sections */
-        section {
-            padding: 100px 5%;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        .section-header p {
-            color: #999;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+  /* ---------- SERVICES ---------- */
+  .services{
+    background:var(--paper);
+  }
+  .service-list{
+    border-top:1px solid var(--line-light);
+  }
+  .service-row{
+    display:grid;
+    grid-template-columns:80px 1fr 1.2fr;
+    align-items:center;
+    gap:30px;
+    padding:34px 0;
+    border-bottom:1px solid var(--line-light);
+    transition:background .3s;
+  }
+  .service-row:hover{background:var(--paper-2);}
+  @media (max-width:760px){
+    .service-row{grid-template-columns:1fr; gap:10px; padding:26px 0;}
+  }
+  .service-index{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--graphite);
+  }
+  .service-name{
+    font-family:'Archivo Expanded',sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:clamp(20px,2.4vw,28px);
+  }
+  .service-desc{
+    color:var(--static);
+    font-size:15px;
+    line-height:1.6;
+    max-width:440px;
+  }
 
-        /* Scroll Reveal Utility */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  /* ---------- PROMISE ---------- */
+  .promise{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:left;
+  }
+  .promise blockquote{
+    font-family:'Archivo Expanded',sans-serif;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:clamp(30px,6.6vw,84px);
+    line-height:1.02;
+    max-width:1150px;
+  }
+  .promise blockquote span{color:var(--signal);}
+  .promise cite{
+    display:block;
+    margin-top:40px;
+    font-family:'IBM Plex Mono',monospace;
+    font-style:normal;
+    font-size:13px;
+    letter-spacing:0.18em;
+    color:var(--static);
+  }
 
-        /* 1. Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1920&auto=format&fit=crop') center/cover;
-            padding: 0 5%;
-        }
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to right, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.6) 100%);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-        .hero-tagline {
-            color: var(--accent);
-            font-family: var(--font-heading);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        .hero-content h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            animation: bounce 2s infinite;
-            color: rgba(255,255,255,0.5);
-            font-size: 1.5rem;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-15px) translateX(-50%); }
-            60% { transform: translateY(-7px) translateX(-50%); }
-        }
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background:var(--paper);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr; gap:50px;}
+  }
+  .contact h2{
+    font-size:clamp(34px,6vw,64px);
+  }
+  .contact h2 a{
+    border-bottom:4px solid var(--signal);
+  }
+  .contact-details{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    border-top:1px solid var(--line-light);
+    padding-top:28px;
+    margin-top:40px;
+  }
+  .contact-item .mono.tag{
+    font-size:11px;
+    color:var(--graphite);
+    display:block;
+    margin-bottom:8px;
+  }
+  .contact-item a, .contact-item span{
+    font-size:20px;
+    font-weight:500;
+  }
+  .contact-item a{
+    border-bottom:1px solid transparent;
+    transition:border-color .25s;
+  }
+  .contact-item a:hover{border-color:var(--signal);}
 
-        /* 2. About Section */
-        #about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        .about-text h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .about-text p {
-            color: #999;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
+  /* ---------- SOCIAL ---------- */
+  .social-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .social-link{
+    width:38px;height:38px;
+    border:1px solid var(--line-dark);
+    border-radius:2px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,0.75);
+    transition:border-color .25s, color .25s, background .25s;
+  }
+  .social-link:hover{
+    border-color:var(--signal);
+    color:var(--signal);
+    background:rgba(169,98,44,0.08);
+  }
+  .social-link svg{width:17px;height:17px;}
+  .contact-social{
+    margin-top:36px;
+  }
+  .contact-social .mono.tag{
+    font-size:11px;
+    color:var(--graphite);
+    display:block;
+    margin-bottom:14px;
+  }
+  .contact-social .social-link{
+    border-color:var(--line-light);
+    color:var(--ink);
+  }
+  .contact-social .social-link:hover{
+    border-color:var(--signal);
+    color:var(--signal);
+  }
 
-        /* 3. Our Companies */
-        .companies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .company-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            border-radius: 12px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        .company-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            background: rgba(255,255,255,0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        .company-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .company-card ul {
-            margin-bottom: 30px;
-            color: #999;
-        }
-        .company-card ul li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .company-card ul li::before {
-            content: '\f105';
-            font-family: 'FontAwesome';
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
-        .company-card .btn {
-            width: 100%;
-            text-align: center;
-        }
+  /* ---------- CONTACT FORM ---------- */
+  .contact-form-wrap{
+    background:var(--paper-2);
+    border:1px solid var(--line-light);
+    border-radius:2px;
+    padding:42px 38px;
+  }
+  .contact-form-wrap > .mono.tag{
+    font-size:11px;
+    color:var(--graphite);
+    display:block;
+    margin-bottom:24px;
+  }
+  #contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .field label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--static);
+  }
+  .field input,
+  .field textarea{
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    color:var(--ink);
+    background:var(--paper);
+    border:1px solid var(--line-light);
+    border-radius:2px;
+    padding:13px 14px;
+    resize:vertical;
+    transition:border-color .25s;
+  }
+  .field input:focus,
+  .field textarea:focus{
+    border-color:var(--signal);
+    outline:none;
+  }
+  #contact-form .btn-primary{
+    border:none;
+    cursor:pointer;
+    align-self:flex-start;
+    margin-top:4px;
+  }
+  .form-note{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.03em;
+    color:var(--graphite);
+    line-height:1.6;
+    margin-top:-6px;
+  }
+  .form-note.success{color:var(--signal);}
+  @media (max-width:520px){
+    .contact-form-wrap{padding:32px 24px;}
+  }
 
-        /* 4. Why Choose */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            background: var(--surface);
-            border: 1px solid var(--surface-border);
-            padding: 40px 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: var(--transition);
-        }
-        .feature-card:hover {
-            background: rgba(255,255,255,0.05);
-            transform: translateY(-5px);
-        }
-        .feature-card i {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        .feature-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--static);
+    padding:50px 0 36px;
+    border-top:1px solid var(--line-dark);
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+    padding-bottom:34px;
+    margin-bottom:34px;
+    border-bottom:1px solid var(--line-dark);
+  }
+  .footer-logo{
+    height:20px;
+    opacity:.9;
+  }
+  .footer-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+  }
+  .footer-copy{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.05em;
+    color:rgba(255,255,255,0.35);
+    margin-top:26px;
+  }
 
-        /* 5. Our Vision (Cinematic) */
-        #vision {
-            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
-            position: relative;
-            text-align: center;
-            padding: 150px 5%;
-        }
-        #vision::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11,11,11,0.85);
-        }
-        .vision-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .vision-content h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        .vision-content p {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 50px;
-        }
-        .expansion-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .expansion-tag {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-        .expansion-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* 6. Founder Section */
-        #founder {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            align-items: center;
-            background: #111;
-            border-radius: 12px;
-            padding: 60px;
-            margin: 100px 5%;
-            border: 1px solid var(--surface-border);
-        }
-        .founder-img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            object-position: top center;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        }
-        .founder-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--accent);
-        }
-        .founder-role {
-            color: #aaa;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-        .founder-text blockquote {
-            font-size: 1.4rem;
-            font-style: italic;
-            line-height: 1.8;
-            border-left: 4px solid var(--accent);
-            padding-left: 20px;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-        .founder-text p {
-            color: #999;
-            margin-bottom: 15px;
-        }
-
-        /* 7. Stats */
-        #stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-            background: var(--surface);
-            padding: 80px 5%;
-            border-top: 1px solid var(--surface-border);
-            border-bottom: 1px solid var(--surface-border);
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-        .stat-label {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        /* 8. Roadmap */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: var(--surface-border);
-        }
-        .timeline-item {
-            margin-bottom: 60px;
-            position: relative;
-            width: 50%;
-        }
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 40px;
-            text-align: right;
-        }
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 40px;
-        }
-        .timeline-dot {
-            position: absolute;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border: 4px solid var(--accent);
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -10px;
-        }
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -10px;
-        }
-        .timeline-content h3 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-        .timeline-content ul {
-            color: #999;
-        }
-
-        /* 9. Contact */
-        #contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-        .contact-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        .contact-info p {
-            color: #999;
-            margin-bottom: 40px;
-        }
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        .contact-details i {
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-        .contact-form {
-            background: var(--surface);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid var(--surface-border);
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--surface-border);
-            border-radius: 4px;
-            color: var(--secondary);
-            font-family: var(--font-body);
-            transition: var(--transition);
-        }
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-        .form-group textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        /* 10. Footer */
-        footer {
-            background: #050505;
-            padding: 80px 5% 30px;
-            border-top: 1px solid var(--surface-border);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        .footer-brand p {
-            color: #666;
-            margin-top: 20px;
-            max-width: 300px;
-        }
-        .footer-col h4 {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        .footer-col ul li a {
-            color: #999;
-            transition: var(--transition);
-        }
-        .footer-col ul li a:hover {
-            color: var(--accent);
-        }
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .social-icons a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background: var(--surface);
-            border-radius: 50%;
-            color: var(--secondary);
-            transition: var(--transition);
-        }
-        .social-icons a:hover {
-            background: var(--accent);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--surface-border);
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-content h1 { font-size: 3.5rem; }
-            #founder { grid-template-columns: 1fr; margin: 50px 5%; padding: 40px; }
-            .timeline::before { left: 30px; }
-            .timeline-item { width: 100%; padding-left: 80px !important; text-align: left !important; }
-            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
-            .timeline-item:nth-child(odd) .timeline-dot, .timeline-item:nth-child(even) .timeline-dot { left: 20px; right: auto; }
-        }
-
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 70px; left: -100%;
-                width: 100%; height: calc(100vh - 70px);
-                background: var(--primary);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-            }
-            .nav-links.active { left: 0; }
-            .hero-content h1 { font-size: 2.5rem; }
-            #about, #contact { grid-template-columns: 1fr; }
-            .hero-btns { flex-direction: column; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .section-header h2 { font-size: 2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- Loading Animation -->
-    <div id="loader">
-        <div class="spinner"></div>
+<header id="site-header">
+  <nav class="wrap">
+    <img class="logo-mark" src="logo.png" alt="Tawaja">
+    <ul class="nav-links">
+      <li><a href="#meaning">The Name</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Start a Project</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <canvas id="noise-canvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span> SIGNAL ACQUIRED — TAWAJA MARKETING AGENCY</div>
+    <h1>Attention <span>Is Earned.</span><br>Not Assumed.</h1>
+    <p class="hero-sub">Tawaja is a marketing agency built on one belief: attention is the starting point of every successful brand, product, and experience. We find the signal, sharpen the focus, and build what comes next.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contact">Start a Project →</a>
+      <a class="btn-ghost" href="#meaning">What Tawaja Means</a>
     </div>
+  </div>
+  <div class="scroll-cue"><div class="bar"></div> SCROLL</div>
+</section>
 
-    <!-- Scroll Progress -->
-    <div id="scroll-progress"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar">
-        <a href="index.html" class="logo-container">
-            <img src="logo.jpg" alt="TAWAJA Group Logo" class="logo-img">
-        </a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#companies">Companies</a>
-            <a href="#vision">Vision</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#contact">Contact</a>
+<section class="meaning" id="meaning">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The Name</div>
+      <h2>What Tawaja Means</h2>
+      <p>Every brand starts the same way — by being noticed. Tawaja is built on three ideas that carry that belief from first impression to lasting impact.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <span class="mono tag">01 / 03 — SIGNAL LOW</span>
+        <h3>Attention</h3>
+        <p>Attention is the starting point of every successful brand, product, and experience. Nothing else works until this does.</p>
+        <div class="meter" aria-hidden="true">
+          <span style="height:20%"></span><span style="height:35%"></span><span style="height:50%"></span>
+          <span style="height:25%"></span><span style="height:40%"></span><span style="height:15%"></span>
+          <span style="height:30%"></span><span style="height:20%"></span>
         </div>
-        <div class="menu-btn"><i class="fas fa-bars"></i></div>
-    </nav>
-
-    <!-- 1. Hero Section -->
-    <section id="hero">
-        <div class="hero-content reveal">
-            <span class="hero-tagline">Attention to the Future</span>
-            <h1>Creating Brands, Businesses & Experiences That Shape Tomorrow.</h1>
-            <p>TAWAJA Group builds and grows innovative companies across media, fashion, commerce, and emerging industries.</p>
-            <div class="hero-btns">
-                <a href="#companies" class="btn btn-primary">Explore Our Companies</a>
-                <a href="#contact" class="btn btn-outline">Contact Us</a>
-            </div>
+      </div>
+      <div class="pillar">
+        <span class="mono tag">02 / 03 — SIGNAL SHARPENING</span>
+        <h3>Focus</h3>
+        <p>Attention without direction fades fast. We sharpen it into a message, a look, and a strategy that holds.</p>
+        <div class="meter" aria-hidden="true">
+          <span style="height:45%"></span><span style="height:60%"></span><span style="height:75%"></span>
+          <span style="height:55%"></span><span style="height:70%"></span><span style="height:65%"></span>
+          <span style="height:35%"></span><span style="height:20%"></span>
         </div>
-        <i class="fas fa-chevron-down scroll-indicator"></i>
-    </section>
-
-    <!-- 2. About TAWAJA -->
-    <section id="about">
-        <div class="about-text reveal">
-            <h2>Pioneering the Future of Global Enterprise</h2>
-            <p>TAWAJA Group is a future-focused holding company based in the United Arab Emirates. We build businesses that combine creativity, innovation, technology, and entrepreneurship.</p>
-            <p>Our vision is to create globally recognized brands that positively impact industries and communities. By capturing attention and building long-term value, we establish ecosystems that redefine what's possible.</p>
+      </div>
+      <div class="pillar">
+        <span class="mono tag">03 / 03 — SIGNAL LOCKED</span>
+        <h3>Future</h3>
+        <p>Focus compounds. What earns attention today builds the businesses, categories, and cultures of tomorrow.</p>
+        <div class="meter" aria-hidden="true">
+          <span style="height:80%"></span><span style="height:90%"></span><span style="height:100%"></span>
+          <span style="height:85%"></span><span style="height:95%"></span><span style="height:75%"></span>
+          <span style="height:88%"></span><span style="height:70%"></span>
         </div>
-        <div class="about-image reveal">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" alt="Corporate Architecture">
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 3. Our Companies -->
-    <section id="companies">
-        <div class="section-header reveal">
-            <h2>Our Companies</h2>
-            <p>Building specialized entities designed to dominate their respective markets.</p>
-        </div>
-        <div class="companies-grid">
-            <!-- Media -->
-            <div class="company-card reveal">
-                <i class="fas fa-camera-retro card-icon"></i>
-                <h3>TAWAJA Media</h3>
-                <ul>
-                    <li>Digital Marketing</li>
-                    <li>Brand Strategy</li>
-                    <li>Photography & Videography</li>
-                    <li>Content Creation</li>
-                    <li>Social Media</li>
-                    <li>Website Development</li>
-                    <li>Brand Identity</li>
-                </ul>
-                <a href="#" class="btn btn-outline">Visit TAWAJA Media</a>
-            </div>
-            <!-- Fashion -->
-            <div class="company-card reveal">
-                <i class="fas fa-gem card-icon"></i>
-                <h3>TAWAJA Fashion</h3>
-                <ul>
-                    <li>Luxury Fashion</li>
-                    <li>Lifestyle</li>
-                    <li>Apparel</li>
-                    <li>Accessories</li>
-                    <li>Creative Design</li>
-                    <li>Future Collections</li>
-                </ul>
-                <a href="#" class="btn btn-outline">Visit TAWAJA Fashion</a>
-            </div>
-            <!-- Commerce -->
-            <div class="company-card reveal">
-                <i class="fas fa-shopping-bag card-icon"></i>
-                <h3>TAWAJA Commerce</h3>
-                <ul>
-                    <li>Ecommerce</li>
-                    <li>Retail</li>
-                    <li>Digital Commerce</li>
-                    <li>Marketplaces</li>
-                    <li>Business Solutions</li>
-                    <li>Technology Integration</li>
-                </ul>
-                <a href="#" class="btn btn-outline">Visit TAWAJA Commerce</a>
-            </div>
-        </div>
-    </section>
+<section class="vm" id="vision">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:620px;">
+      <div class="eyebrow">Where We're Headed</div>
+      <h2 style="color:var(--paper)">Vision &amp; Mission</h2>
+    </div>
+    <div class="vm-grid reveal">
+      <div class="vm-block">
+        <div class="eyebrow">Vision</div>
+        <h3>Creating the brands, products, and experiences that capture attention and shape the future.</h3>
+      </div>
+      <div class="vm-block">
+        <div class="eyebrow">Mission</div>
+        <h3>Transforming ideas into impactful businesses through creativity, innovation, and entrepreneurship.</h3>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 4. Why Choose TAWAJA -->
-    <section id="features">
-        <div class="section-header reveal">
-            <h2>The TAWAJA Advantage</h2>
+<section class="founder" id="founder">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">From The Founder</div>
+      <h2>A Message From Our Founder</h2>
+    </div>
+    <div class="founder-grid reveal">
+      <div class="founder-photo">
+        <img src="founder.jpg" alt="Irfan Fitrat, Founder of Tawaja">
+        <div class="frame-rule"></div>
+      </div>
+      <div class="founder-msg">
+        <span class="founder-quote-mark">&ldquo;</span>
+        <blockquote>TAWAJA was founded with one belief: in a world full of noise, attention is the foundation of every successful brand.</blockquote>
+        <p>Today, businesses are not only competing on products and services — they are competing for visibility, trust, and meaningful connections with their audiences.</p>
+        <p>At TAWAJA, we help businesses transform their ideas into powerful brands through creative strategy, digital marketing, and innovative solutions. We believe great marketing is not just about being seen; it is about being remembered, building relationships, and creating measurable growth.</p>
+        <p>Our mission is simple: to help brands stand out, connect with the right people, and succeed in an ever-changing digital landscape.</p>
+        <p>From the UAE to the world, TAWAJA is committed to becoming a trusted marketing partner for businesses that want to grow, evolve, and make an impact.</p>
+        <div class="founder-sign">
+          <div class="name">Irfan Fitrat</div>
+          <span class="role">Founder, Tawaja</span>
         </div>
-        <div class="features-grid">
-            <div class="feature-card reveal">
-                <i class="fas fa-eye"></i>
-                <h4>Visionary Leadership</h4>
-                <p>Guided by foresight and an unwavering commitment to industry-leading excellence.</p>
-            </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-lightbulb"></i>
-                <h4>Innovation First</h4>
-                <p>Prioritizing cutting-edge solutions to stay ahead in rapidly evolving global markets.</p>
-            </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-chart-line"></i>
-                <h4>Long-Term Growth</h4>
-                <p>Building sustainable business models designed for enduring success and scale.</p>
-            </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-handshake"></i>
-                <h4>Strategic Partnerships</h4>
-                <p>Cultivating alliances with key global players to amplify our impact and reach.</p>
-            </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-globe"></i>
-                <h4>Global Perspective</h4>
-                <p>Rooted in the UAE, operating with a borderless mindset for international impact.</p>
-            </div>
-            <div class="feature-card reveal">
-                <i class="fas fa-bullseye"></i>
-                <h4>Attention-Driven Branding</h4>
-                <p>Mastering the art of capturing and retaining consumer attention across all mediums.</p>
-            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2>Capabilities</h2>
+      <p>Six disciplines, one belief. Every engagement is built to move a brand from unnoticed to unmissed.</p>
+    </div>
+    <div class="service-list reveal">
+      <div class="service-row">
+        <span class="service-index">001</span>
+        <span class="service-name">Brand Strategy</span>
+        <span class="service-desc">Positioning, naming, and narrative — the case for why a brand deserves attention in the first place.</span>
+      </div>
+      <div class="service-row">
+        <span class="service-index">002</span>
+        <span class="service-name">Creative &amp; Design</span>
+        <span class="service-desc">Identity systems and visual language that hold focus across every screen, surface, and space.</span>
+      </div>
+      <div class="service-row">
+        <span class="service-index">003</span>
+        <span class="service-name">Digital &amp; Performance</span>
+        <span class="service-desc">Media, funnels, and campaigns engineered to convert attention into measurable growth.</span>
+      </div>
+      <div class="service-row">
+        <span class="service-index">004</span>
+        <span class="service-name">Content Production</span>
+        <span class="service-desc">Film, photography, and copy that give a brand something worth stopping for.</span>
+      </div>
+      <div class="service-row">
+        <span class="service-index">005</span>
+        <span class="service-name">Growth Consulting</span>
+        <span class="service-desc">Go-to-market and channel strategy that turns early traction into a repeatable engine.</span>
+      </div>
+      <div class="service-row">
+        <span class="service-index">006</span>
+        <span class="service-name">Venture Building</span>
+        <span class="service-desc">Hands-on support for founders turning a raw idea into an impactful, investable business.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="wrap">
+    <div class="eyebrow reveal">Brand Promise</div>
+    <blockquote class="reveal">In a world full of noise,<br>we create brands that <span>earn attention.</span></blockquote>
+    <cite class="reveal">— Tawaja</cite>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Let's cut through<br>the <a href="mailto:info@tawaja.com">noise</a>.</h2>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="mono tag">Phone</span>
+            <a href="tel:+9711254200">+971 125 4200</a>
+          </div>
+          <div class="contact-item">
+            <span class="mono tag">Email</span>
+            <a href="mailto:info@tawaja.com">info@tawaja.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="mono tag">Based In</span>
+            <span>United Arab Emirates</span>
+          </div>
         </div>
-    </section>
 
-    <!-- 5. Our Vision -->
-    <section id="vision">
-        <div class="vision-content reveal">
-            <h2>Building Tomorrow's Brands Today</h2>
-            <p>Our vision is to establish a globally recognized ecosystem of businesses that create value, inspire innovation, and redefine industries.</p>
-            <div class="expansion-grid">
-                <div class="expansion-tag">Artificial Intelligence</div>
-                <div class="expansion-tag">Technology</div>
-                <div class="expansion-tag">Real Estate</div>
-                <div class="expansion-tag">Education</div>
-                <div class="expansion-tag">Hospitality</div>
-                <div class="expansion-tag">Investment</div>
-                <div class="expansion-tag">Healthcare</div>
-                <div class="expansion-tag">Sustainability</div>
-            </div>
+        <div class="contact-social">
+          <span class="mono tag">Follow Tawaja</span>
+          <div class="social-row">
+            <a class="social-link" href="https://www.instagram.com/tawajamedia" target="_blank" rel="noopener" aria-label="Tawaja on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1"></circle></svg>
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@tawajamedia" target="_blank" rel="noopener" aria-label="Tawaja on TikTok">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v10.5a3.5 3.5 0 1 1-3-3.46"></path><path d="M14 3c.3 2.6 2.1 4.5 5 4.8"></path></svg>
+            </a>
+            <a class="social-link" href="https://www.facebook.com/tawajamedia" target="_blank" rel="noopener" aria-label="Tawaja on Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 21v-7h2.5l.5-3H14V9c0-.9.3-1.5 1.7-1.5H17V4.8c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4V11H8.5v3H10.8v7"></path></svg>
+            </a>
+            <a class="social-link" href="https://x.com/tawajamedia" target="_blank" rel="noopener" aria-label="Tawaja on X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 16M20 4L4 20"></path></svg>
+            </a>
+            <a class="social-link" href="https://www.youtube.com/@tawajamedia" target="_blank" rel="noopener" aria-label="Tawaja on YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="4"></rect><path d="M11 9.5l4 2.5-4 2.5z" fill="currentColor" stroke="none"></path></svg>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/company/110673239" target="_blank" rel="noopener" aria-label="Tawaja on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"></rect><line x1="7.5" y1="10.5" x2="7.5" y2="16.5"></line><circle cx="7.5" cy="7.3" r="0.9" fill="currentColor" stroke="none"></circle><path d="M11.5 16.5v-3.5c0-1.4 1-2.3 2.3-2.3 1.3 0 2.2.9 2.2 2.3v3.5"></path><line x1="11.5" y1="10.5" x2="11.5" y2="16.5"></line></svg>
+            </a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- 6. Founder Section -->
-    <section id="founder" class="reveal">
-        <div class="founder-img-wrapper">
-            <img src="ceo.jpg" alt="Irfan Fitrat - Founder & CEO" class="founder-img">
-        </div>
-        <div class="founder-text">
-            <h2>Message from the Founder</h2>
-            <span class="founder-role">Irfan Fitrat — Founder & CEO, TAWAJA GROUP</span>
-            <blockquote>
-                "TAWAJA was founded with one belief: attention is the world's most valuable resource."
-            </blockquote>
-            <p>Every company we build exists to create meaningful impact, solve real problems, and leave a lasting legacy. We do not just launch businesses; we engineer ecosystems that are resilient, adaptive, and designed for the future. The UAE provides us with the perfect launchpad to bring our global ambitions to life.</p>
-        </div>
-    </section>
+      <div class="contact-form-wrap reveal">
+        <span class="mono tag">Send A Message</span>
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="cf-submit">Send Message →</button>
+          <p class="form-note" id="cf-note">Opens your email app with this message ready to send to info@tawaja.com.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- 7. Company Statistics -->
-    <section id="stats">
-        <div class="stat-item reveal">
-            <div class="stat-number" data-target="3">0</div>
-            <div class="stat-label">Active Companies</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number" data-target="1">0</div>
-            <div class="stat-label">Holding Group</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number" data-target="100">0</div>
-            <div class="stat-label">% Vision Driven</div>
-        </div>
-        <div class="stat-item reveal">
-            <div class="stat-number" data-target="2026">0</div>
-            <div class="stat-label">Established</div>
-        </div>
-    </section>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <img class="footer-logo" src="logo.png" alt="Tawaja">
+      <span class="footer-tag">Attention · Focus · Future</span>
+    </div>
+    <div class="footer-row">
+      <span class="footer-tag">+971 125 4200 — info@tawaja.com</span>
+    </div>
+    <div class="footer-copy">© <span id="year"></span> TAWAJA. All rights reserved.</div>
+  </div>
+</footer>
 
-    <!-- 8. Future Roadmap -->
-    <section id="roadmap">
-        <div class="section-header reveal">
-            <h2>Future Roadmap</h2>
-            <p>Our strategic timeline for expansion and technological integration.</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>2026</h3>
-                    <ul>
-                        <li>Launch TAWAJA Media</li>
-                        <li>Launch TAWAJA Fashion</li>
-                        <li>Launch TAWAJA Commerce</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Phase II</h3>
-                    <ul>
-                        <li>Technology Integration</li>
-                        <li>Artificial Intelligence Solutions</li>
-                        <li>Strategic Investments</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Phase III</h3>
-                    <ul>
-                        <li>Education Infrastructure</li>
-                        <li>Hospitality Concepts</li>
-                        <li>Global Expansion</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- 9. Contact Section -->
-    <section id="contact">
-        <div class="contact-info reveal">
-            <h2>Let's Build the Future Together</h2>
-            <p>Partner with us, join our team, or learn more about our portfolio of companies.</p>
-            
-            <div class="contact-details">
-                <div><i class="fas fa-envelope"></i> info@tawajagroup.com</div>
-                <div><i class="fas fa-phone"></i> +971 52 125 4200</div>
-                <div><i class="fas fa-globe"></i> www.tawaja.com</div>
-                <div><i class="fas fa-map-marker-alt"></i> Dubai, United Arab Emirates</div>
-            </div>
-            
-            <!-- Google Maps Placeholder -->
-            <div style="width: 100%; height: 200px; background: #222; border-radius: 8px; display:flex; align-items:center; justify-content:center; color: #555; margin-top: 30px;">
-                [ Google Map Integration Placeholder ]
-            </div>
-        </div>
-        <div class="contact-form reveal">
-            <form action="mailto:info@tawajagroup.com" method="POST" enctype="text/plain">
-                <div class="form-group">
-                    <input type="text" name="Name" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="Email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="Subject" placeholder="Subject">
-                </div>
-                <div class="form-group">
-                    <textarea name="Message" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
-        </div>
-    </section>
+// Header scroll state
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
 
-    <!-- 10. Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo-container" style="display: inline-block; padding: 5px 12px; margin-bottom: 15px;">
-                    <img src="logo.jpg" alt="TAWAJA Group Logo" style="height: 28px; width: auto;">
-                </a>
-                <p>Building tomorrow's brands today. A premier holding company based in the United Arab Emirates with a global perspective.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/tawajagroup" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com/tawajagroup" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://x.com/tawajagroup" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://tiktok.com/@tawajagroup" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@tawajagroup" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://linkedin.com/company/tawaja/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Companies</h4>
-                <ul>
-                    <li><a href="#companies">TAWAJA Media</a></li>
-                    <li><a href="#companies">TAWAJA Fashion</a></li>
-                    <li><a href="#companies">TAWAJA Commerce</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#vision">Our Vision</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                    <li><a href="#contact">News</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#contact">Privacy Policy</a></li>
-                    <li><a href="#contact">Terms & Conditions</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 TAWAJA Group. All Rights Reserved.
-        </div>
-    </footer>
+// Scroll reveal
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('.reveal');
+if (reduceMotion) {
+  revealEls.forEach(el => el.classList.add('in'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.15 });
+  revealEls.forEach(el => io.observe(el));
+}
 
-    <!-- JavaScript Features -->
-    <script>
-        // 1. Remove Loader on Window Load
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        });
+// Contact form -> mailto handoff
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const note = document.getElementById('cf-note');
 
-        // 2. Sticky Nav & Scroll Progress
-        const navbar = document.getElementById('navbar');
-        const scrollProgress = document.getElementById('scroll-progress');
+    const subject = encodeURIComponent('New inquiry from ' + name);
+    const body = encodeURIComponent(
+      message + '\n\n---\nFrom: ' + name + '\nEmail: ' + email
+    );
+    window.location.href = 'mailto:info@tawaja.com?subject=' + subject + '&body=' + body;
 
-        window.addEventListener('scroll', () => {
-            // Navbar behavior
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+    note.textContent = 'Your email app should now be open with this message ready to send.';
+    note.classList.add('success');
+  });
+}
 
-            // Scroll Progress behavior
-            const scrollTop = window.scrollY;
-            const docHeight = document.body.offsetHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
-        });
+(function(){
+  const canvas = document.getElementById('noise-canvas');
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.parentElement;
+  let W, H, dpr;
+  let particles = [];
+  let ambientDots = [];
+  let startTime = null;
+  const SETTLE_MS = 1900;
 
-        // 3. Mobile Menu Toggle
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = menuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
+  function sizeCanvas(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.offsetWidth;
+    H = hero.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
 
-        // 4. Scroll Reveal & Counter Animation using Intersection Observer
-        const revealElements = document.querySelectorAll('.reveal');
-        const statCounters = document.querySelectorAll('.stat-number');
-        let hasCounted = false;
+  function sampleTextPoints(text, opts){
+    const off = document.createElement('canvas');
+    off.width = W; off.height = H;
+    const octx = off.getContext('2d');
+    const fontSize = opts.fontSize;
+    octx.fillStyle = '#fff';
+    octx.font = '900 ' + fontSize + 'px Archivo Expanded, sans-serif';
+    octx.textAlign = 'center';
+    octx.textBaseline = 'middle';
+    octx.fillText(text, W*opts.xRatio, H*opts.yRatio);
+    const data = octx.getImageData(0,0,W,H).data;
+    const step = opts.step;
+    const pts = [];
+    for(let y=0; y<H; y+=step){
+      for(let x=0; x<W; x+=step){
+        const idx = (y*W + x) * 4 + 3;
+        if(data[idx] > 120){
+          pts.push({x, y});
+        }
+      }
+    }
+    return pts;
+  }
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+  function buildParticles(){
+    const isSmall = W < 760;
+    const fontSize = isSmall ? W*0.16 : Math.min(W*0.09, 190);
+    const step = isSmall ? 5 : 6;
+    const pts = sampleTextPoints('TAWAJA', {fontSize, xRatio:0.5, yRatio: isSmall? 0.42 : 0.46, step});
+    particles = pts.map(p => ({
+      tx:p.x, ty:p.y,
+      x: Math.random()*W,
+      y: Math.random()*H,
+      size: Math.random()*1.6 + 0.9,
+      isSignal: Math.random() > 0.82,
+      jitterSeed: Math.random()*1000
+    }));
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Add reveal class
-                    entry.target.classList.add('active');
-                    
-                    // Trigger counters if it's the stats section
-                    if (entry.target.classList.contains('stat-item') && !hasCounted) {
-                        statCounters.forEach(counter => {
-                            const target = +counter.getAttribute('data-target');
-                            const increment = target / 50; // Speed adjustment
-                            
-                            const updateCount = () => {
-                                const count = +counter.innerText;
-                                if (count < target) {
-                                    counter.innerText = Math.ceil(count + increment);
-                                    setTimeout(updateCount, 40);
-                                } else {
-                                    counter.innerText = target + (target === 100 ? "%" : "");
-                                }
-                            };
-                            updateCount();
-                        });
-                        hasCounted = true; // prevent recounting
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+    ambientDots = [];
+    const count = isSmall ? 60 : 130;
+    for(let i=0;i<count;i++){
+      ambientDots.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        size: Math.random()*1.3 + 0.5,
+        speed: Math.random()*0.15 + 0.03,
+        phase: Math.random()*Math.PI*2,
+        opacity: Math.random()*0.25 + 0.05
+      });
+    }
+  }
 
-        revealElements.forEach(el => observer.observe(el));
+  function draw(ts){
+    if(startTime === null) startTime = ts;
+    const elapsed = ts - startTime;
+    const progress = Math.min(elapsed / SETTLE_MS, 1);
+    const eased = 1 - Math.pow(1-progress, 3);
 
-    </script>
+    ctx.clearRect(0,0,W,H);
+
+    // ambient background noise
+    ambientDots.forEach(d => {
+      const dy = Math.sin(elapsed*0.0003 + d.phase) * 6;
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(255,255,255,' + d.opacity + ')';
+      ctx.arc(d.x, d.y + dy, d.size, 0, Math.PI*2);
+      ctx.fill();
+    });
+
+    // text particles
+    particles.forEach(p => {
+      const curX = p.x + (p.tx - p.x) * eased;
+      const curY = p.y + (p.ty - p.y) * eased;
+      let jx = 0, jy = 0;
+      if(progress >= 1){
+        jx = Math.sin(elapsed*0.0012 + p.jitterSeed) * 0.6;
+        jy = Math.cos(elapsed*0.0009 + p.jitterSeed) * 0.6;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = p.isSignal ? '#a9622c' : 'rgba(255,255,255,0.5)';
+      ctx.arc(curX+jx, curY+jy, p.size, 0, Math.PI*2);
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  function init(){
+    sizeCanvas();
+    buildParticles();
+    startTime = null;
+  }
+
+  init();
+  window.addEventListener('resize', () => {
+    clearTimeout(window.__tawajaResize);
+    window.__tawajaResize = setTimeout(init, 200);
+  });
+
+  if(reduceMotion){
+    // draw settled state immediately, no animation loop
+    sizeCanvas();
+    buildParticles();
+    particles.forEach(p => { p.x = p.tx; p.y = p.ty; });
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.fillStyle = p.isSignal ? '#a9622c' : 'rgba(255,255,255,0.5)';
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+      ctx.fill();
+    });
+  } else {
+    requestAnimationFrame(draw);
+  }
+})();
+</script>
+
 </body>
 </html>
