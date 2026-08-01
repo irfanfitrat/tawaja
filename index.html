@@ -3,7 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TAWAJA — Attention. Focus. Future.</title>
+<title>TAWAJA — Marketing Agency | Attention. Focus. Future.</title>
+<meta name="description" content="Tawaja is a UAE-based marketing agency built on one belief: attention is the starting point of every successful brand. We find the signal, sharpen the focus, and build what comes next.">
+<link rel="canonical" href="https://tawaja.com/">
+<meta name="theme-color" content="#141414">
+
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tawaja">
+<meta property="og:title" content="Tawaja — Attention. Focus. Future.">
+<meta property="og:description" content="A UAE-based marketing agency built on one belief: attention is the starting point of every successful brand, product, and experience.">
+<meta property="og:url" content="https://tawaja.com/">
+<meta property="og:image" content="https://tawaja.com/logo.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tawaja — Attention. Focus. Future.">
+<meta name="twitter:description" content="A UAE-based marketing agency built on one belief: attention is the starting point of every successful brand, product, and experience.">
+<meta name="twitter:image" content="https://tawaja.com/logo.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "name": "Tawaja",
+  "url": "https://tawaja.com/",
+  "logo": "https://tawaja.com/logo.svg",
+  "image": "https://tawaja.com/logo.svg",
+  "description": "Tawaja is a UAE-based marketing agency built on one belief: attention is the starting point of every successful brand, product, and experience.",
+  "telephone": "+971521254200",
+  "email": "info@tawaja.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE"
+  },
+  "sameAs": [
+    "https://www.instagram.com/tawajamedia",
+    "https://www.tiktok.com/@tawajamedia",
+    "https://www.facebook.com/tawajamedia",
+    "https://x.com/tawajamedia",
+    "https://www.youtube.com/@tawajamedia",
+    "https://www.linkedin.com/company/110673239"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -140,15 +184,67 @@
   .nav-toggle{display:none;}
   @media (max-width:860px){
     .nav-links{display:none;}
+    .nav-cta{display:none;}
     .nav-toggle{
-      display:block;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;height:38px;
       background:none;border:1px solid var(--line-dark);
-      color:var(--paper);
-      font-family:'IBM Plex Mono',monospace;
-      font-size:11px;
-      letter-spacing:.1em;
-      padding:8px 14px;
       border-radius:2px;
+      cursor:pointer;
+      position:relative;
+      flex-shrink:0;
+    }
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after{
+      content:"";
+      position:absolute;
+      width:18px;height:1.5px;
+      background:var(--paper);
+      transition:transform .28s var(--ease), opacity .2s;
+    }
+    .nav-toggle-bars::before{transform:translateY(-6px);}
+    .nav-toggle-bars::after{transform:translateY(6px);}
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars{background:transparent;}
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::before{transform:translateY(0) rotate(45deg);}
+    .nav-toggle[aria-expanded="true"] .nav-toggle-bars::after{transform:translateY(0) rotate(-45deg);}
+  }
+  .mobile-menu{
+    display:none;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height .35s var(--ease), opacity .3s var(--ease);
+  }
+  @media (max-width:860px){
+    .mobile-menu{display:block;}
+    .mobile-menu.open{
+      max-height:420px;
+      opacity:1;
+      border-top:1px solid var(--line-dark);
+      margin-top:14px;
+    }
+    .mobile-menu ul{
+      list-style:none;
+      padding:20px 22px 6px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    .mobile-menu a{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:13px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--paper);
+      opacity:0.85;
+    }
+    .mobile-menu .mobile-cta{
+      display:block;
+      text-align:center;
+      margin:6px 22px 22px;
     }
   }
 
@@ -908,7 +1004,20 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="nav-cta" href="#contact">Start a Project</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="nav-toggle-bars"></span>
+    </button>
   </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#meaning">The Name</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#services">What We Do</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta mobile-cta" href="#contact">Start a Project</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -994,7 +1103,7 @@
     </div>
     <div class="founder-grid reveal">
       <div class="founder-photo">
-        <img src="founder.jpg" alt="Irfan Fitrat, Founder of Tawaja">
+        <img src="founder.jpg" alt="Irfan Fitrat, Founder of Tawaja" loading="lazy">
         <div class="frame-rule"></div>
       </div>
       <div class="founder-msg">
@@ -1214,6 +1323,32 @@ if (contactForm) {
     note.classList.add('success');
   });
 }
+
+// Mobile nav toggle
+(function(){
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if(!toggle || !menu) return;
+
+  function closeMenu(){
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+  function openMenu(){
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+  }
+
+  toggle.addEventListener('click', () => {
+    menu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 860) closeMenu();
+  });
+})();
 
 // WhatsApp popup
 (function(){
