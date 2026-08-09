@@ -1579,6 +1579,67 @@
       text-underline-offset: 2px;
     }
 
+
+    /* HubSpot form container */
+    .hubspot-form-wrap {
+      min-height: 280px;
+    }
+    .hs-form-loading {
+      color: var(--text-3);
+      font-size: 0.95rem;
+      padding: 24px 0;
+    }
+    /* HubSpot injected form – dark theme alignment */
+    .hubspot-form-wrap .hs-form label {
+      color: var(--text-2) !important;
+      font-size: 0.82rem !important;
+      font-weight: 500 !important;
+      margin-bottom: 8px !important;
+    }
+    .hubspot-form-wrap .hs-form .hs-input,
+    .hubspot-form-wrap .hs-form input[type="text"],
+    .hubspot-form-wrap .hs-form input[type="email"],
+    .hubspot-form-wrap .hs-form input[type="tel"],
+    .hubspot-form-wrap .hs-form input[type="url"],
+    .hubspot-form-wrap .hs-form select,
+    .hubspot-form-wrap .hs-form textarea {
+      width: 100% !important;
+      padding: 14px 16px !important;
+      background: var(--bg-3) !important;
+      border: 1px solid var(--border) !important;
+      border-radius: 10px !important;
+      color: var(--text) !important;
+      font-family: inherit !important;
+      font-size: 0.95rem !important;
+    }
+    .hubspot-form-wrap .hs-form .hs-input:focus,
+    .hubspot-form-wrap .hs-form input:focus,
+    .hubspot-form-wrap .hs-form textarea:focus,
+    .hubspot-form-wrap .hs-form select:focus {
+      outline: none !important;
+      border-color: rgba(255,59,92,0.45) !important;
+      background: #141414 !important;
+    }
+    .hubspot-form-wrap .hs-form .hs-button,
+    .hubspot-form-wrap .hs-form input[type="submit"] {
+      background: linear-gradient(135deg, #FF8C00 0%, #FF3B5C 50%, #E4003A 100%) !important;
+      border: none !important;
+      border-radius: 100px !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+      font-size: 0.95rem !important;
+      padding: 16px 32px !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      margin-top: 8px !important;
+    }
+    .hubspot-form-wrap .hs-form .hs-error-msgs label {
+      color: #f87171 !important;
+    }
+    .hubspot-form-wrap .hs-form fieldset {
+      max-width: 100% !important;
+    }
+
     /* ========== FOOTER ========== */
     .footer {
       padding: 80px 0 40px;
@@ -2415,74 +2476,15 @@
         </div>
 
         <div class="contact-form reveal reveal-delay-1">
-          <form action="https://formsubmit.co/info@tawaja.com" method="POST" id="contactForm">
-            <input type="hidden" name="_subject" value="New inquiry from tawaja.com">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://www.tawaja.com/?inquiry=sent#contact">
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required autocomplete="name">
-              </div>
-              <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" id="company" name="company" autocomplete="organization">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required autocomplete="email">
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone / WhatsApp</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="website">Website <span class="optional">(optional)</span></label>
-              <input type="url" id="website" name="website" placeholder="https://">
-            </div>
-            <div class="form-group">
-              <label for="help">What can TAWAJA help you with?</label>
-              <select id="help" name="help">
-                <option value="">Select an option</option>
-                <option value="strategy">Strategy & Positioning</option>
-                <option value="branding">Brand Identity & Creative</option>
-                <option value="performance">Performance Marketing</option>
-                <option value="seo">SEO & Content</option>
-                <option value="web">Web & Conversion</option>
-                <option value="social">Social & Content</option>
-                <option value="full">Full growth system</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="budget">Budget range <span class="optional">(optional)</span></label>
-              <select id="budget" name="budget">
-                <option value="">Prefer not to say</option>
-                <option value="under-5k">Under $5,000 / month</option>
-                <option value="5k-10k">$5,000 – $10,000 / month</option>
-                <option value="10k-25k">$10,000 – $25,000 / month</option>
-                <option value="25k-plus">$25,000+ / month</option>
-                <option value="project">Project-based</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <div class="form-submit">
-              <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
-                Send Inquiry
-              </button>
-            </div>
-            <p class="form-note">
-              Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
-            </p>
-          </form>
+          
+          <!-- HubSpot Form -->
+          <div id="hubspot-form-container" class="hubspot-form-wrap">
+            <div class="hs-form-loading" id="hsFormLoading">Loading form…</div>
+          </div>
+          <p class="form-note">
+            Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
+          </p>
+
         </div>
       </div>
     </div>
@@ -2709,25 +2711,30 @@
       });
     })();
 
-    // Contact form success message (after FormSubmit redirect back)
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('inquiry') === 'sent') {
-        const form = document.getElementById('contactForm');
-        if (form) {
-          const note = document.createElement('div');
-          note.setAttribute('role', 'status');
-          note.style.cssText = 'margin-bottom:18px;padding:14px 16px;border-radius:10px;border:1px solid rgba(37,211,102,0.35);background:rgba(37,211,102,0.08);color:#a7f3d0;font-size:0.95rem;';
-          note.textContent = 'Thank you. Your inquiry has been sent. We typically respond within one business day.';
-          form.parentNode.insertBefore(note, form);
-          form.reset();
-        }
-        if (window.history && window.history.replaceState) {
-          const clean = window.location.pathname + window.location.hash;
-          window.history.replaceState({}, document.title, clean);
-        }
+
+  </script>
+
+
+  <!-- HubSpot Form Embed -->
+  <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    function initTawajaHubspotForm() {
+      if (typeof hbspt === 'undefined' || !hbspt.forms) {
+        setTimeout(initTawajaHubspotForm, 200);
+        return;
       }
-    })();
+      hbspt.forms.create({
+        region: "eu1",
+        portalId: "149067537",
+        formId: "REPLACE_WITH_YOUR_HUBSPOT_FORM_ID",
+        target: "#hubspot-form-container",
+        onFormReady: function() {
+          var loading = document.getElementById('hsFormLoading');
+          if (loading) loading.style.display = 'none';
+        }
+      });
+    }
+    initTawajaHubspotForm();
   </script>
 
   <!-- Start of HubSpot Embed Code -->
