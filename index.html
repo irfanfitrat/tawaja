@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAWAJA | Digital Marketing Agency in Dubai, UAE</title>
+  <meta name="description" content="TAWAJA is a premium digital marketing agency in Dubai, UAE. We help ambitious brands build strategy, capture attention, and turn digital visibility into measurable growth through performance marketing, SEO, branding and web.">
+  <meta name="keywords" content="digital marketing agency Dubai, UAE marketing agency, performance marketing, SEO Dubai, brand strategy, Meta ads, Google ads, web design UAE">
+  <meta name="theme-color" content="#050505">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tawaja.com/">
+  <link rel="icon" type="image/svg+xml" href="tawaja-logo-icon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tawaja.com/">
+  <meta property="og:title" content="TAWAJA | Digital Marketing Agency in Dubai, UAE">
+  <meta property="og:description" content="Premium digital marketing for ambitious brands. Strategy, performance, branding and growth systems based in Dubai, UAE.">
+  <meta property="og:locale" content="en_AE">
+  <meta property="og:site_name" content="TAWAJA">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TAWAJA | Digital Marketing Agency in Dubai, UAE">
+  <meta name="twitter:description" content="Premium digital marketing for ambitious brands. Strategy, performance, branding and growth systems based in Dubai, UAE.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TAWAJA",
+    "url": "https://tawaja.com/",
+    "logo": "https://tawaja.com/tawaja-logo-icon.svg",
+    "email": "info@tawaja.com",
+    "telephone": "+971521254200",
+    "description": "Premium digital marketing agency based in Dubai, UAE. Helping ambitious brands build strategy, capture attention and turn visibility into measurable growth.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "95 Al Sunbolah Street, Dubai Media City, DQuarters, Ground Floor, Building 5",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "sameAs": [
+      "https://www.facebook.com/tawajamedia",
+      "https://www.instagram.com/tawajamedia",
+      "https://www.tiktok.com/@tawajamedia",
+      "https://www.youtube.com/@tawajamedia",
+      "https://x.com/tawajamedia",
+      "https://www.linkedin.com/company/tawaja/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-2: #0A0A0A;
+      --bg-3: #0F0F0F;
+      --bg-card: #111111;
+      --text: #F4F4F5;
+      --text-2: #A1A1AA;
+      --text-3: #71717A;
+      --accent-1: #FF8C00;
+      --accent-2: #FF3B5C;
+      --accent-3: #E4003A;
+      --gradient: linear-gradient(135deg, #FF8C00 0%, #FF3B5C 50%, #E4003A 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(255,140,0,0.12), rgba(255,59,92,0.1), rgba(228,0,58,0.08));
+      --border: rgba(255,255,255,0.06);
+      --border-2: rgba(255,255,255,0.1);
+      --radius: 14px;
+      --radius-lg: 22px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --whatsapp: #25D366;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: rgba(255, 59, 92, 0.35);
+      color: #fff;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 3px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    a { color: inherit; }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 22px 0;
+      transition: all 0.4s var(--ease);
+    }
+
+    .nav.scrolled {
+      padding: 14px 0;
+      background: rgba(5,5,5,0.85);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .nav-logo img {
+      height: 34px;
+      width: auto;
+      transition: opacity 0.3s;
+    }
+
+    .nav-logo:hover img { opacity: 0.85; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 450;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent-2);
+      transition: width 0.35s var(--ease);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 100px;
+      border: 1px solid var(--border-2);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.35s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: #fff;
+      color: #050505;
+      border-color: #fff;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1002;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text);
+      margin: 5.5px 0;
+      transition: all 0.3s var(--ease);
+    }
+
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(5,5,5,0.97);
+      backdrop-filter: blur(30px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 36px;
+      gap: 28px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease);
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu a {
+      color: var(--text);
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s var(--ease);
+    }
+
+    .mobile-menu.open a {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-menu.open a:nth-child(1) { transition-delay: 0.05s; }
+    .mobile-menu.open a:nth-child(2) { transition-delay: 0.1s; }
+    .mobile-menu.open a:nth-child(3) { transition-delay: 0.15s; }
+    .mobile-menu.open a:nth-child(4) { transition-delay: 0.2s; }
+    .mobile-menu.open a:nth-child(5) { transition-delay: 0.25s; }
+    .mobile-menu.open a:nth-child(6) { transition-delay: 0.3s; }
+
+    .mobile-menu .m-cta {
+      margin-top: 12px;
+      display: inline-flex;
+      background: var(--gradient);
+      color: #fff;
+      padding: 16px 30px;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 140px 0 100px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+
+    .hero-aura {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      top: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(255, 59, 92, 0.16) 0%, transparent 55%),
+        radial-gradient(ellipse at 30% 60%, rgba(255, 140, 0, 0.10) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 55%, rgba(228, 0, 58, 0.10) 0%, transparent 50%);
+      filter: blur(40px);
+      opacity: 0.9;
+      animation: auraDrift 16s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes auraDrift {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.75; }
+      50% { transform: translateX(-48%) scale(1.06); opacity: 1; }
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+      animation: orbFloat 18s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(255,59,92,0.35) 0%, transparent 70%);
+      top: -10%; right: -8%;
+    }
+
+    .orb-2 {
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(255,140,0,0.28) 0%, transparent 70%);
+      bottom: -5%; left: -10%;
+      animation-delay: -6s;
+    }
+
+    .orb-3 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(228,0,58,0.22) 0%, transparent 70%);
+      top: 40%; left: 35%;
+      animation-delay: -12s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.05); }
+      66% { transform: translate(-20px, 25px) scale(0.97); }
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
+    }
+    /* Floating marketing tool cards - premium 3D glass */
+    .float-tools {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      perspective: 1400px;
+    }
+
+    .tool-card {
+      position: absolute;
+      --rx: 0deg;
+      --ry: 0deg;
+      background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.11) 0%,
+        rgba(255, 255, 255, 0.03) 45%,
+        rgba(255, 59, 92, 0.04) 100%
+      );
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      backdrop-filter: blur(22px) saturate(170%);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      padding: 16px 18px;
+      font-size: 0.7rem;
+      color: var(--text-3);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      opacity: 0.78;
+      transform: translate3d(0, 0, 0) rotateX(var(--rx)) rotateY(var(--ry));
+      transform-style: preserve-3d;
+      transition: transform 0.18s ease-out, opacity 0.35s var(--ease), box-shadow 0.35s var(--ease);
+      will-change: transform;
+      pointer-events: auto;
+    }
+
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.16) 0%,
+        transparent 38%,
+        transparent 62%,
+        rgba(255, 140, 0, 0.06) 100%
+      );
+      pointer-events: none;
+    }
+
+    .tool-card:hover {
+      opacity: 0.95;
+      box-shadow:
+        0 24px 50px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .tool-card .tool-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-weight: 500;
+      color: var(--text-2);
+      font-size: 0.72rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-card .tool-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px currentColor;
+    }
+
+    .tool-card .tool-bar {
+      height: 5px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.07);
+      margin-bottom: 6px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-card .tool-bar span {
+      display: block;
+      height: 100%;
+      border-radius: 3px;
+      background: var(--gradient);
+    }
+
+    .tool-card .tool-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: var(--text-3);
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-card .tool-metric {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 4px 0 2px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-card.meta { top: 16%; right: 5%; width: 168px; }
+    .tool-card.google { top: 40%; right: 2.5%; width: 158px; }
+    .tool-card.ig { bottom: 20%; right: 9%; width: 148px; }
+    .tool-card.seo { top: 26%; left: 3.5%; width: 160px; }
+    .tool-card.analytics { bottom: 16%; left: 5%; width: 168px; }
+    .tool-card.maps { top: 56%; left: 11%; width: 138px; }
+    .tool-card.browser { bottom: 7%; right: 24%; width: 176px; }
+
+    @media (max-width: 980px) {
+      .tool-card { opacity: 0.38; pointer-events: none; }
+      .tool-card.browser,
+      .tool-card.maps { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .float-tools { display: none; }
+    }
+
+
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px 8px 12px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.025);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s var(--ease) 0.15s forwards;
+    }
+
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 0 rgba(255,59,92,0.5);
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,59,92,0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(255,59,92,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,59,92,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7.5vw, 5.6rem);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      margin-bottom: 28px;
+      line-height: 1.02;
+    }
+
+    .hero h1 .line {
+      display: block;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s var(--ease) forwards;
+    }
+
+    .hero h1 .line:nth-child(1) { animation-delay: 0.25s; }
+    .hero h1 .line:nth-child(2) { animation-delay: 0.38s; }
+    .hero h1 .line:nth-child(3) { animation-delay: 0.51s; }
+
+    .hero-sub {
+      font-size: clamp(1.1rem, 2.1vw, 1.28rem);
+      color: var(--text-2);
+      max-width: 560px;
+      margin-bottom: 48px;
+      line-height: 1.65;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s var(--ease) 0.7s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s var(--ease) 0.85s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 32px;
+      border-radius: 100px;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s var(--ease);
+      box-shadow: 0 4px 28px rgba(228,0,58,0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 36px rgba(228,0,58,0.4);
+    }
+
+    .btn-primary:hover::before { opacity: 1; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 28px;
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--border-2);
+      transition: all 0.35s var(--ease);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    /* ========== MARQUEE ========== */
+    .marquee-section {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-2);
+      overflow: hidden;
+    }
+
+    .marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+
+    .marquee span {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: 0 48px;
+      white-space: nowrap;
+    }
+
+    .marquee span em {
+      font-style: normal;
+      color: var(--text-2);
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========== SECTION COMMON ========== */
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.72rem;
+      font-weight: 550;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 22px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 22px;
+      height: 1.5px;
+      background: var(--accent-2);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ========== PHILOSOPHY ========== */
+    .philosophy {
+      padding: 90px 0;
+      background: var(--bg-2);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .phil-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .phil-card p {
+      color: var(--text-2);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ========== POSITIONING ========== */
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .positioning-text h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 26px;
+    }
+
+    .positioning-text p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .positioning-text p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .positioning-visual {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .positioning-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-soft);
+      animation: softPulse 8s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.85; }
+    }
+
+    .positioning-visual .mark {
+      position: relative;
+      z-index: 1;
+      width: 160px;
+      height: auto;
+      opacity: 0.92;
+    }
+
+    /* ========== FOUNDER ========== */
+    .founder {
+      background: var(--bg-2);
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .founder-image-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+    }
+
+    .founder-image-wrap .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--text-3);
+      background: linear-gradient(160deg, #121212 0%, #0a0a0a 100%);
+    }
+
+    .founder-image-wrap .placeholder svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.4;
+    }
+
+    .founder-image-wrap .placeholder span {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .founder-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 2;
+    }
+
+    .founder-image-wrap .placeholder-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      color: var(--text-3);
+      background: linear-gradient(160deg, #121212 0%, #0a0a0a 100%);
+      z-index: 1;
+    }
+
+    .founder-image-wrap.missing-image .placeholder-fallback {
+      display: flex;
+    }
+
+    .founder-image-wrap .placeholder-fallback svg {
+      width: 64px;
+      height: 64px;
+      opacity: 0.4;
+    }
+
+    .founder-image-wrap .placeholder-fallback span {
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .founder-content h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+      margin-bottom: 28px;
+    }
+
+    .founder-message {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .founder-message:last-of-type {
+      margin-bottom: 36px;
+    }
+
+    .founder-sign {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .founder-role {
+      font-size: 0.9rem;
+      color: var(--text-3);
+    }
+
+    /* Vision & Mission */
+    .vision-section {
+      background: var(--bg);
+      padding: 120px 0;
+    }
+
+    .vision-header {
+      max-width: 640px;
+      margin-bottom: 56px;
+    }
+
+    .vision-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .vision-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      transition: border-color 0.35s var(--ease), transform 0.35s var(--ease);
+    }
+
+    .vision-card:hover {
+      border-color: var(--border-2);
+      transform: translateY(-3px);
+    }
+
+    .vision-card .v-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 18px;
+    }
+
+    .vision-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .vision-card p {
+      color: var(--text-2);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .brand-promise {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-promise::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255, 59, 92, 0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .brand-promise .p-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .brand-promise blockquote {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .brand-promise cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--text-3);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 980px) {
+      .vision-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* ========== SERVICES ========== */
+    .services { background: var(--bg); }
+
+    .services-header {
+      max-width: 640px;
+      margin-bottom: 64px;
+    }
+
+    .services-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 20px;
+    }
+
+    .services-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      transition: all 0.45s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-2);
+      background: #151515;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: var(--text-2);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* ========== WORK / PROOF ========== */
+    .work { background: var(--bg-2); }
+
+    .work-header {
+      max-width: 620px;
+      margin-bottom: 60px;
+    }
+
+    .work-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .work-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      transition: all 0.4s var(--ease);
+      position: relative;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-card:hover {
+      border-color: var(--border-2);
+      transform: translateY(-4px);
+    }
+
+    .work-card .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .work-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .work-card p {
+      color: var(--text-2);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .work-card .tag {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ========== WHO WE WORK WITH ========== */
+    .clients-section { background: var(--bg); }
+
+    .clients-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .clients-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .clients-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .clients-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .client-tag {
+      padding: 12px 22px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      font-size: 0.9rem;
+      color: var(--text-2);
+      transition: all 0.35s var(--ease);
+    }
+
+    .client-tag:hover {
+      border-color: rgba(255,59,92,0.35);
+      color: var(--text);
+      background: rgba(255,59,92,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* ========== DIFFERENCE ========== */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.15fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .diff-grid h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 22px;
+    }
+
+    .diff-grid > div > p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .diff-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .diff-item {
+      display: flex;
+      gap: 18px;
+      padding: 26px 24px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: all 0.4s var(--ease);
+    }
+
+    .diff-item:hover {
+      border-color: var(--border-2);
+      transform: translateX(6px);
+    }
+
+    .diff-item .icon {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      border-radius: 11px;
+      background: var(--gradient-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      color: var(--accent-2);
+    }
+
+    .diff-item h4 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .diff-item p {
+      color: var(--text-2);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* ========== REACH ========== */
+    .reach { background: var(--bg-2); }
+
+    .reach-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .reach-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .reach-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .reach-markets {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .market-tag {
+      padding: 12px 22px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      font-size: 0.9rem;
+      color: var(--text-2);
+      transition: all 0.35s var(--ease);
+    }
+
+    .market-tag:hover {
+      border-color: rgba(255,59,92,0.35);
+      color: var(--text);
+      background: rgba(255,59,92,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* ========== PROCESS ========== */
+    .process-header {
+      max-width: 580px;
+      margin-bottom: 64px;
+    }
+
+    .process-header h2 {
+      font-size: clamp(2.1rem, 4vw, 3rem);
+      margin-bottom: 18px;
+    }
+
+    .process-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-2), transparent);
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 26px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      transition: all 0.45s var(--ease);
+    }
+
+    .step:hover .step-num {
+      background: var(--gradient);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 0 32px rgba(228,0,58,0.35);
+      transform: scale(1.08);
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--text-2);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-section {
+      background: var(--bg-2);
+      padding: 120px 0;
+    }
+
+    .contact-header {
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .contact-header h2 {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+
+    .contact-header p {
+      color: var(--text-2);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .contact-block h3 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 14px;
+    }
+
+    .contact-block a,
+    .contact-block p {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      transition: color 0.3s;
+    }
+
+    .contact-block a:hover {
+      color: var(--accent-2);
+    }
+
+    .contact-block .address {
+      color: var(--text-2);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-top: 6px;
+    }
+
+    .contact-block .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      font-size: 0.875rem;
+      color: var(--text-3);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .contact-block .map-link:hover {
+      color: var(--text);
+      border-bottom-color: var(--text-3);
+    }
+
+    .office-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 8px;
+    }
+
+    /* Form */
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+
+    .form-group label .optional {
+      color: var(--text-3);
+      font-weight: 400;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: rgba(255,59,92,0.45);
+      background: #141414;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%2371717A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-note {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--text-3);
+      line-height: 1.5;
+    }
+
+    .form-note a {
+      color: var(--text-2);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      padding: 80px 0 40px;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .footer-brand p {
+      color: var(--text-2);
+      font-size: 0.9rem;
+      margin-top: 18px;
+      max-width: 260px;
+      line-height: 1.65;
+    }
+
+    .footer-brand img { height: 30px; }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-3);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover {
+      border-color: var(--border-2);
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .footer-social svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 11px; }
+
+    .footer-col a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover { color: var(--text); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-3);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover { color: var(--text-2); }
+
+    /* ========== WHATSAPP ========== */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .wa-popup {
+      width: 300px;
+      background: #111;
+      border: 1px solid var(--border-2);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+      pointer-events: none;
+      transition: all 0.4s var(--ease);
+    }
+
+    .wa-popup.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .wa-popup-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: #0d0d0d;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wa-popup-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .wa-popup-avatar img {
+      width: 22px;
+      height: auto;
+    }
+
+    .wa-popup-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .wa-popup-info strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .wa-popup-info span {
+      font-size: 0.78rem;
+      color: var(--text-3);
+    }
+
+    .wa-popup-close {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .wa-popup-close:hover { color: var(--text); }
+
+    .wa-popup-body {
+      padding: 18px 16px;
+    }
+
+    .wa-popup-body p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .wa-popup-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--whatsapp);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .wa-popup-btn:hover {
+      background: #20bd5a;
+      transform: translateY(-1px);
+    }
+
+    .wa-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+    }
+
+    .wa-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 980px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+
+      .philosophy-grid,
+      .services-grid,
+      .process-steps,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .positioning-grid,
+      .diff-grid,
+      .founder-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .process-steps::before { display: none; }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+
+      .section, .contact-section { padding: 90px 0; }
+
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 130px 0 80px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+      .footer-legal { justify-content: center; }
+      .contact-form { padding: 28px 22px; }
+      .container { padding: 0 22px; }
+      .wa-float { bottom: 20px; right: 20px; }
+      .wa-popup { width: 280px; }
+      .wa-btn { width: 54px; height: 54px; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .orb, .marquee { animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .hero-badge, .hero h1 .line, .hero-sub, .hero-actions {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="TAWAJA home">
+        <img src="tawaja-logo-dark.svg" alt="TAWAJA">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Book a Call</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+    <a href="#approach">Approach</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#founder">Founder</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="m-cta">Start a Conversation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-aura"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="hero-grid"></div>
+      <div class="float-tools">
+        <div class="tool-card meta">
+          <div class="tool-head"><span class="tool-dot" style="background:#1877F2"></span> Meta Ads</div>
+          <div class="tool-metric">Campaigns</div>
+          <div class="tool-bar"><span style="width:72%"></span></div>
+          <div class="tool-row"><span>Spend</span><span>Results</span></div>
+        </div>
+        <div class="tool-card google">
+          <div class="tool-head"><span class="tool-dot" style="background:#4285F4"></span> Google Ads</div>
+          <div class="tool-metric">Search Ads</div>
+          <div class="tool-bar"><span style="width:64%"></span></div>
+          <div class="tool-row"><span>Search</span><span>CPC</span></div>
+        </div>
+        <div class="tool-card ig">
+          <div class="tool-head"><span class="tool-dot" style="background:#E1306C"></span> Instagram</div>
+          <div class="tool-metric">Content</div>
+          <div class="tool-bar"><span style="width:58%"></span></div>
+          <div class="tool-row"><span>Organic</span><span>Engagement</span></div>
+        </div>
+        <div class="tool-card seo">
+          <div class="tool-head"><span class="tool-dot" style="background:#34A853"></span> SEO</div>
+          <div class="tool-metric">Rankings</div>
+          <div class="tool-bar"><span style="width:81%"></span></div>
+          <div class="tool-row"><span>Keywords</span><span>Traffic</span></div>
+        </div>
+        <div class="tool-card analytics">
+          <div class="tool-head"><span class="tool-dot" style="background:#F9AB00"></span> Analytics</div>
+          <div class="tool-metric">Insights</div>
+          <div class="tool-bar"><span style="width:68%"></span></div>
+          <div class="tool-row"><span>Sessions</span><span>Goals</span></div>
+        </div>
+        <div class="tool-card maps">
+          <div class="tool-head"><span class="tool-dot" style="background:#EA4335"></span> Local / Maps</div>
+          <div class="tool-metric">Local</div>
+          <div class="tool-bar"><span style="width:90%"></span></div>
+          <div class="tool-row"><span>Reviews</span><span>GBP</span></div>
+        </div>
+        <div class="tool-card browser">
+          <div class="tool-head"><span class="tool-dot" style="background:#FF8C00"></span> Website</div>
+          <div class="tool-metric">Experience</div>
+          <div class="tool-bar"><span style="width:76%"></span></div>
+          <div class="tool-row"><span>UX</span><span>Conversion</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Digital Marketing Agency · Dubai, UAE
+        </div>
+        <h1>
+          <span class="line">Attention.</span>
+          <span class="line">Strategy.</span>
+          <span class="line gradient-text">Growth.</span>
+        </h1>
+        <p class="hero-sub">
+          We build brands, campaigns and digital growth systems designed to turn attention into measurable business results.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Start a Conversation
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#services" class="btn-secondary">View Capabilities</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee">
+      <span>Strategy <em>·</em></span>
+      <span>Performance Marketing <em>·</em></span>
+      <span>Brand Identity <em>·</em></span>
+      <span>SEO & Content <em>·</em></span>
+      <span>Web Experiences <em>·</em></span>
+      <span>Social Systems <em>·</em></span>
+      <span>Creative Campaigns <em>·</em></span>
+      <span>Email & Retention <em>·</em></span>
+      <span>Strategy <em>·</em></span>
+      <span>Performance Marketing <em>·</em></span>
+      <span>Brand Identity <em>·</em></span>
+      <span>SEO & Content <em>·</em></span>
+      <span>Web Experiences <em>·</em></span>
+      <span>Social Systems <em>·</em></span>
+      <span>Creative Campaigns <em>·</em></span>
+      <span>Email & Retention <em>·</em></span>
+    </div>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div class="phil-card reveal">
+          <h3>Attention is the asset</h3>
+          <p>In crowded markets, the brands that win are the ones that earn the right attention — not just more of it.</p>
+        </div>
+        <div class="phil-card reveal reveal-delay-1">
+          <h3>Strategy before tactics</h3>
+          <p>Every channel, campaign and creative decision is guided by a clear commercial objective and a defined audience.</p>
+        </div>
+        <div class="phil-card reveal reveal-delay-2">
+          <h3>Growth is the measure</h3>
+          <p>We design marketing systems that move the metrics that actually matter: demand, leads, revenue and reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section class="section" id="approach">
+    <div class="container">
+      <div class="positioning-grid">
+        <div class="positioning-text">
+          <div class="section-label reveal">Positioning</div>
+          <h2 class="reveal reveal-delay-1">A strategic partner,<br>not another agency</h2>
+          <p class="reveal reveal-delay-2">
+            TAWAJA exists for ambitious businesses that understand marketing is more than posting content or running ads.
+          </p>
+          <p class="reveal reveal-delay-2">
+            We combine <strong>strategy, creativity and performance</strong> into one connected growth system. The goal is never activity for its own sake — it is commercial outcomes that compound over time.
+          </p>
+          <p class="reveal reveal-delay-3">
+            Based in Dubai with the capability to serve brands across key international markets. We start with the business reality and work outward.
+          </p>
+        </div>
+        <div class="positioning-visual reveal reveal-delay-2" aria-hidden="true">
+          <img src="tawaja-logo-icon.svg" alt="" class="mark">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section founder" id="founder">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-image-wrap reveal">
+          <img
+            src="irfan-fitrat-founder-ceo-tawaja.jpg"
+            alt="Irfan Fitrat, Founder & CEO of TAWAJA"
+            loading="lazy"
+            width="480"
+            height="600"
+            onerror="this.style.display='none'; this.parentElement.classList.add('missing-image');"
+          >
+          <div class="placeholder-fallback" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Add irfan-fitrat-founder-ceo-tawaja.jpg</span>
+          </div>
+        </div>
+        <div class="founder-content">
+          <div class="section-label reveal">Message from the Founder</div>
+          <h2 class="reveal reveal-delay-1">Built on a simple belief</h2>
+          <p class="founder-message reveal reveal-delay-2">
+            TAWAJA was founded with one belief: in a world full of noise, attention is the foundation of every successful brand.
+          </p>
+          <p class="founder-message reveal reveal-delay-2">
+            Today, businesses are not only competing on products and services — they are competing for visibility, trust, and meaningful connections with their audiences.
+          </p>
+          <p class="founder-message reveal reveal-delay-2">
+            At TAWAJA, we help businesses transform their ideas into powerful brands through creative strategy, digital marketing, and innovative solutions. We believe great marketing is not just about being seen; it is about being remembered, building relationships, and creating measurable growth.
+          </p>
+          <p class="founder-message reveal reveal-delay-2">
+            Our mission is simple: to help brands stand out, connect with the right people, and succeed in an ever-changing digital landscape.
+          </p>
+          <p class="founder-message reveal reveal-delay-2">
+            From the UAE to the world, TAWAJA is committed to becoming a trusted marketing partner for businesses that want to grow, evolve, and make an impact.
+          </p>
+          <div class="reveal reveal-delay-3">
+            <p class="founder-sign">Irfan Fitrat</p>
+            <p class="founder-role">Founder & CEO, TAWAJA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VISION & MISSION -->
+  <section class="vision-section" id="vision">
+    <div class="container">
+      <div class="vision-header">
+        <div class="section-label reveal">Where We&rsquo;re Headed</div>
+        <h2 class="reveal reveal-delay-1">Vision &amp; Mission</h2>
+      </div>
+
+      <div class="vision-grid">
+        <div class="vision-card reveal">
+          <div class="v-label">Vision</div>
+          <h3>What we aim to create</h3>
+          <p>Creating the brands, products, and experiences that capture attention and shape the future.</p>
+        </div>
+        <div class="vision-card reveal reveal-delay-1">
+          <div class="v-label">Mission</div>
+          <h3>How we get there</h3>
+          <p>Transforming ideas into impactful businesses through creativity, innovation, and entrepreneurship.</p>
+        </div>
+      </div>
+
+      <div class="brand-promise reveal reveal-delay-2">
+        <div class="p-label">Brand Promise</div>
+        <blockquote>
+          In a world full of noise,<br>
+          we create brands that earn attention.
+        </blockquote>
+        <cite>&mdash; TAWAJA</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label reveal">Capabilities</div>
+        <h2 class="reveal reveal-delay-1">A connected growth system</h2>
+        <p class="reveal reveal-delay-2">
+          Our services are designed to work together. Strategy informs creative. Creative fuels performance. Performance feeds insight. Everything points toward measurable growth.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="num">01</div>
+          <h3>Strategy & Positioning</h3>
+          <p>Brand positioning, audience definition, competitive clarity and growth roadmaps that guide every subsequent decision.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="num">02</div>
+          <h3>Brand Identity & Creative</h3>
+          <p>Logo systems, visual identity, brand guidelines and creative campaigns that make a business memorable and credible.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="num">03</div>
+          <h3>Performance Marketing</h3>
+          <p>Google Ads, Meta Ads and paid social campaigns engineered for high-intent reach, efficient acquisition and measurable ROI.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="num">04</div>
+          <h3>SEO & Content</h3>
+          <p>Technical and content-led SEO that builds durable visibility. Content systems designed to attract, educate and convert.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="num">05</div>
+          <h3>Web & Conversion</h3>
+          <p>Conversion-focused websites, landing pages and digital experiences designed to turn attention into action.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="num">06</div>
+          <h3>Social & Content Systems</h3>
+          <p>Social strategy, content creation and community systems that build presence, demand and long-term brand equity.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="num">07</div>
+          <h3>Email & Retention</h3>
+          <p>Email strategy, automated sequences and retention campaigns that nurture leads and increase customer lifetime value.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="num">08</div>
+          <h3>Product Photography</h3>
+          <p>High-quality commercial and product photography that elevates brand perception across web, social and advertising.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="num">09</div>
+          <h3>Reputation & Local</h3>
+          <p>Google Business Profile strategy, review systems and local presence that builds trust in competitive markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section work" id="work">
+    <div class="container">
+      <div class="work-header">
+        <div class="section-label reveal">Selected Work</div>
+        <h2 class="reveal reveal-delay-1">Projects that move the needle</h2>
+        <p class="reveal reveal-delay-2">
+          A selection of engagements spanning strategy, creative, performance and growth. Real case studies will appear here as we publish them.
+        </p>
+      </div>
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="num">01</div>
+          <h3>Brand Strategy & Identity</h3>
+          <p>Placeholder for a brand strategy and identity engagement. Replace with project name, short description and outcome when ready.</p>
+          <span class="tag">Strategy → Creative</span>
+        </article>
+        <article class="work-card reveal reveal-delay-1">
+          <div class="num">02</div>
+          <h3>Website & Digital Experience</h3>
+          <p>Placeholder for a conversion-focused website or digital experience project. Replace with project details and results when ready.</p>
+          <span class="tag">Web → Conversion</span>
+        </article>
+        <article class="work-card reveal">
+          <div class="num">03</div>
+          <h3>Performance Marketing</h3>
+          <p>Placeholder for a paid acquisition or full-funnel performance campaign. Replace with channel mix and commercial outcomes when ready.</p>
+          <span class="tag">Media → Results</span>
+        </article>
+        <article class="work-card reveal reveal-delay-1">
+          <div class="num">04</div>
+          <h3>SEO & Growth</h3>
+          <p>Placeholder for an organic growth or content-led SEO engagement. Replace with approach and measurable progress when ready.</p>
+          <span class="tag">SEO → Demand</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE WORK WITH -->
+  <section class="section clients-section">
+    <div class="container">
+      <div class="clients-header">
+        <div class="section-label reveal" style="justify-content: center;">Who We Work With</div>
+        <h2 class="reveal reveal-delay-1">Built for ambitious businesses</h2>
+        <p class="reveal reveal-delay-2">
+          TAWAJA works with businesses that understand growth requires more than isolated marketing tactics. We build connected brand, digital and performance systems designed around real commercial objectives.
+        </p>
+      </div>
+      <div class="clients-tags reveal reveal-delay-2">
+        <span class="client-tag">Startups & Emerging Brands</span>
+        <span class="client-tag">SMEs & Growing Businesses</span>
+        <span class="client-tag">E-commerce</span>
+        <span class="client-tag">Professional Services</span>
+        <span class="client-tag">Hospitality</span>
+        <span class="client-tag">Real Estate</span>
+        <span class="client-tag">B2B Businesses</span>
+        <span class="client-tag">Established Brands</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENCE -->
+  <section class="section" id="difference">
+    <div class="container">
+      <div class="diff-grid">
+        <div>
+          <div class="section-label reveal">The Difference</div>
+          <h2 class="reveal reveal-delay-1">What sets TAWAJA apart</h2>
+          <p class="reveal reveal-delay-2">
+            We do not compete on being the cheapest option. We compete on strategic clarity, quality of execution, and the ability to connect marketing activity to business results.
+          </p>
+        </div>
+        <ul class="diff-list">
+          <li class="diff-item reveal">
+            <div class="icon" aria-hidden="true">→</div>
+            <div>
+              <h4>Outcomes over activities</h4>
+              <p>We sell growth systems, not just deliverables. Every recommendation is tied to a commercial objective.</p>
+            </div>
+          </li>
+          <li class="diff-item reveal reveal-delay-1">
+            <div class="icon" aria-hidden="true">→</div>
+            <div>
+              <h4>UAE foundation, global capability</h4>
+              <p>Deep understanding of regional markets with the ability to execute for brands operating across the GCC, Europe, North America, Australia and beyond.</p>
+            </div>
+          </li>
+          <li class="diff-item reveal reveal-delay-2">
+            <div class="icon" aria-hidden="true">→</div>
+            <div>
+              <h4>Premium execution standard</h4>
+              <p>Work that looks and feels intentional. No generic templates, no recycled creative, no shortcuts that dilute the brand.</p>
+            </div>
+          </li>
+          <li class="diff-item reveal reveal-delay-3">
+            <div class="icon" aria-hidden="true">→</div>
+            <div>
+              <h4>Founder-led partnership</h4>
+              <p>Direct access to strategic thinking. We aim to become an extension of your team — understanding your model and goals deeply enough to advise, not just execute.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REACH -->
+  <section class="section reach" id="reach">
+    <div class="container">
+      <div class="reach-header">
+        <div class="section-label reveal" style="justify-content: center;">Global Capability</div>
+        <h2 class="reveal reveal-delay-1">Built in the UAE.<br>Capable across markets.</h2>
+        <p class="reveal reveal-delay-2">
+          Headquartered in Dubai with an office in Islamabad. We work with ambitious brands across key regions while maintaining the strategic depth and quality standard that defines TAWAJA.
+        </p>
+      </div>
+      <div class="reach-markets reveal reveal-delay-2">
+        <span class="market-tag">UAE</span>
+        <span class="market-tag">GCC</span>
+        <span class="market-tag">United Kingdom</span>
+        <span class="market-tag">Europe</span>
+        <span class="market-tag">North America</span>
+        <span class="market-tag">Australia</span>
+        <span class="market-tag">Pakistan</span>
+        <span class="market-tag">Selected markets worldwide</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="process-header">
+        <div class="section-label reveal">Process</div>
+        <h2 class="reveal reveal-delay-1">How we work</h2>
+        <p class="reveal reveal-delay-2">
+          A clear, disciplined process that moves from understanding to strategy to execution — always with commercial clarity.
+        </p>
+      </div>
+      <div class="process-steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Discover</h3>
+          <p>We study your business, audience, competition and current marketing reality.</p>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <h3>Define</h3>
+          <p>We clarify positioning, priorities and the growth system required.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <h3>Design</h3>
+          <p>Strategy, creative and channel plans are built to work as one system.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <div class="step-num">04</div>
+          <h3>Deliver</h3>
+          <p>Execution, measurement and continuous refinement toward the goal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-header">
+        <div class="section-label reveal">Contact</div>
+        <h2 class="reveal reveal-delay-1">Start a conversation</h2>
+        <p class="reveal reveal-delay-2">
+          Tell us about your business and growth objectives. We will respond with an honest view on whether TAWAJA is the right partner and what a focused engagement could look like.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-block">
+            <h3>Email</h3>
+            <a href="mailto:info@tawaja.com">info@tawaja.com</a>
+          </div>
+
+          <div class="contact-block">
+            <h3>Phone & WhatsApp</h3>
+            <p><a href="tel:+971521254200">+971 52 125 4200</a> <span style="color:var(--text-3);font-size:0.85rem;">(UAE)</span></p>
+            <p style="margin-top:6px;"><a href="tel:+923179777477">+92 317 9777477</a> <span style="color:var(--text-3);font-size:0.85rem;">(Pakistan)</span></p>
+          </div>
+
+          <div class="contact-block">
+            <span class="office-label">Headquarters</span>
+            <h3 style="margin-bottom:8px;">Dubai, UAE</h3>
+            <p class="address">
+              95 Al Sunbolah Street,<br>
+              Dubai Media City,<br>
+              DQuarters, Ground Floor, Building 5,<br>
+              Dubai, United Arab Emirates
+            </p>
+            <a href="#" class="map-link" aria-label="View Dubai office on map (link to be added)">View on Map →</a>
+          </div>
+
+          <div class="contact-block">
+            <span class="office-label">Pakistan Office</span>
+            <h3 style="margin-bottom:8px;">Islamabad, Pakistan</h3>
+            <p class="address">
+              Street 36, MPCHS E-11/3,<br>
+              Sector E-11, WorkZone,<br>
+              Lower Basement, Silk Bank Plaza,<br>
+              Islamabad, ICT 44000, Pakistan
+            </p>
+            <a href="#" class="map-link" aria-label="View Islamabad office on map (link to be added)">View on Map →</a>
+          </div>
+        </div>
+
+        <div class="contact-form reveal reveal-delay-1">
+          <form action="#" method="post" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" autocomplete="organization">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="website">Website <span class="optional">(optional)</span></label>
+              <input type="url" id="website" name="website" placeholder="https://">
+            </div>
+            <div class="form-group">
+              <label for="help">What can TAWAJA help you with?</label>
+              <select id="help" name="help">
+                <option value="">Select an option</option>
+                <option value="strategy">Strategy & Positioning</option>
+                <option value="branding">Brand Identity & Creative</option>
+                <option value="performance">Performance Marketing</option>
+                <option value="seo">SEO & Content</option>
+                <option value="web">Web & Conversion</option>
+                <option value="social">Social & Content</option>
+                <option value="full">Full growth system</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget range <span class="optional">(optional)</span></label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option value="under-5k">Under $5,000 / month</option>
+                <option value="5k-10k">$5,000 – $10,000 / month</option>
+                <option value="10k-25k">$10,000 – $25,000 / month</option>
+                <option value="25k-plus">$25,000+ / month</option>
+                <option value="project">Project-based</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+                Send Inquiry
+              </button>
+            </div>
+            <p class="form-note">
+              Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="tawaja-logo-dark.svg" alt="TAWAJA">
+          <p>Premium digital marketing for ambitious brands. Based in the UAE. Built for growth that matters.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/tawajamedia" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/tawajamedia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@tawajamedia" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.83a8.18 8.18 0 0 0 4.76 1.52V6.91a4.85 4.85 0 0 1-1-.22z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@tawajamedia" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
+            </a>
+            <a href="https://x.com/tawajamedia" target="_blank" rel="noopener noreferrer" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/tawaja/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Capabilities</h4>
+          <ul>
+            <li><a href="#services">Strategy & Positioning</a></li>
+            <li><a href="#services">Brand Identity & Creative</a></li>
+            <li><a href="#services">Performance Marketing</a></li>
+            <li><a href="#services">SEO & Content</a></li>
+            <li><a href="#services">Web & Conversion</a></li>
+            <li><a href="#services">Social & Content</a></li>
+            <li><a href="#services">Email & Retention</a></li>
+            <li><a href="#services">Product Photography</a></li>
+            <li><a href="#services">Reputation & Local</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#difference">Why TAWAJA</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#work">Selected Work</a></li>
+            <li><a href="#founder">Founder</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Locations</h4>
+          <ul>
+            <li><a href="#contact">Dubai, UAE</a></li>
+            <li><a href="#contact">Islamabad, Pakistan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@tawaja.com">info@tawaja.com</a></li>
+            <li><a href="tel:+971521254200">+971 52 125 4200</a></li>
+            <li><a href="tel:+923179777477">+92 317 9777477</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 TAWAJA. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms & Conditions</a>
+        </div>
+        <span>Attention. Strategy. Growth.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOATING -->
+  <div class="wa-float" id="waFloat">
+    <div class="wa-popup" id="waPopup" role="dialog" aria-label="WhatsApp chat invitation" aria-hidden="true">
+      <div class="wa-popup-header">
+        <div class="wa-popup-avatar" aria-hidden="true">
+          <img src="tawaja-logo-icon.svg" alt="">
+        </div>
+        <div class="wa-popup-info">
+          <strong>TAWAJA</strong>
+          <span>Typically replies within an hour</span>
+        </div>
+        <button class="wa-popup-close" id="waClose" aria-label="Close WhatsApp popup">×</button>
+      </div>
+      <div class="wa-popup-body">
+        <p>👋 Hi there! Have a project in mind? Message us on WhatsApp and let’s talk.</p>
+        <a href="https://wa.me/971521254200?text=Hi%20TAWAJA%2C%20I%27d%20like%20to%20talk%20about%20a%20project." class="wa-popup-btn" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+    <a href="https://wa.me/971521254200?text=Hi%20TAWAJA%2C%20I%27d%20like%20to%20talk%20about%20a%20project." class="wa-btn" id="waBtn" target="_blank" rel="noopener noreferrer" aria-label="Chat with TAWAJA on WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu
+    const toggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    toggle.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // WhatsApp popup
+    const waPopup = document.getElementById('waPopup');
+    const waClose = document.getElementById('waClose');
+    const WA_KEY = 'tawaja_wa_closed';
+
+    function showWaPopup() {
+      if (sessionStorage.getItem(WA_KEY)) return;
+      waPopup.classList.add('show');
+      waPopup.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideWaPopup() {
+      waPopup.classList.remove('show');
+      waPopup.setAttribute('aria-hidden', 'true');
+      sessionStorage.setItem(WA_KEY, '1');
+    }
+
+    waClose.addEventListener('click', hideWaPopup);
+
+    // Show after delay if not previously closed this session
+    setTimeout(showWaPopup, 6000);
+
+
+    // 3D tilt on floating tool cards
+    (function () {
+      const cards = document.querySelectorAll('.tool-card');
+      if (!cards.length) return;
+      const maxTilt = 10;
+
+      cards.forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const midX = rect.width / 2;
+          const midY = rect.height / 2;
+          const ry = ((x - midX) / midX) * maxTilt;
+          const rx = -((y - midY) / midY) * maxTilt;
+          card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--rx', '0deg');
+          card.style.setProperty('--ry', '0deg');
+        });
+      });
+    })();
+
+    // Form (prevent default — connect backend later)
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Placeholder: connect to your backend or form service
+        alert('Thank you. Please email info@tawaja.com directly for now, or connect this form to your preferred service.');
+      });
+    }
+  </script>
+</body>
+</html>
