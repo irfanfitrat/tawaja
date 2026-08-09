@@ -2398,7 +2398,7 @@
               DQuarters, Ground Floor, Building 5,<br>
               Dubai, United Arab Emirates
             </p>
-            <a href="#" class="map-link" aria-label="View Dubai office on map (link to be added)">View on Map →</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=DQuarters%20DMC%20Building%205%2095%20Al%20Sunbolah%20Street%20Dubai%20Media%20City" class="map-link" target="_blank" rel="noopener noreferrer" aria-label="View Dubai headquarters on Google Maps">View on Map →</a>
           </div>
 
           <div class="contact-block">
@@ -2410,12 +2410,17 @@
               Lower Basement, Silk Bank Plaza,<br>
               Islamabad, ICT 44000, Pakistan
             </p>
-            <a href="#" class="map-link" aria-label="View Islamabad office on map (link to be added)">View on Map →</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Silk%20Bank%20Plaza%20Street%2036%20MPCHS%20E-11%2F3%20Islamabad%20Pakistan" class="map-link" target="_blank" rel="noopener noreferrer" aria-label="View Islamabad office on Google Maps">View on Map →</a>
           </div>
         </div>
 
         <div class="contact-form reveal reveal-delay-1">
-          <form action="#" method="post" id="contactForm" novalidate>
+          <form action="https://formsubmit.co/info@tawaja.com" method="POST" id="contactForm">
+            <input type="hidden" name="_subject" value="New inquiry from tawaja.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.tawaja.com/?inquiry=sent#contact">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -2560,8 +2565,8 @@
       <div class="footer-bottom">
         <span>© 2026 TAWAJA. All rights reserved.</span>
         <div class="footer-legal">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
         </div>
         <span>Attention. Strategy. Growth.</span>
       </div>
@@ -2704,15 +2709,25 @@
       });
     })();
 
-    // Form (prevent default — connect backend later)
-    const form = document.getElementById('contactForm');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        // Placeholder: connect to your backend or form service
-        alert('Thank you. Please email info@tawaja.com directly for now, or connect this form to your preferred service.');
-      });
-    }
+    // Contact form success message (after FormSubmit redirect back)
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('inquiry') === 'sent') {
+        const form = document.getElementById('contactForm');
+        if (form) {
+          const note = document.createElement('div');
+          note.setAttribute('role', 'status');
+          note.style.cssText = 'margin-bottom:18px;padding:14px 16px;border-radius:10px;border:1px solid rgba(37,211,102,0.35);background:rgba(37,211,102,0.08);color:#a7f3d0;font-size:0.95rem;';
+          note.textContent = 'Thank you. Your inquiry has been sent. We typically respond within one business day.';
+          form.parentNode.insertBefore(note, form);
+          form.reset();
+        }
+        if (window.history && window.history.replaceState) {
+          const clean = window.location.pathname + window.location.hash;
+          window.history.replaceState({}, document.title, clean);
+        }
+      }
+    })();
   </script>
 </body>
 </html>
