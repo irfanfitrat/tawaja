@@ -2479,7 +2479,7 @@
           
           <!-- HubSpot Form -->
           <div id="hubspot-form-container" class="hubspot-form-wrap">
-            <div class="hs-form-loading" id="hsFormLoading">Loading form…</div>
+            <div class="hs-form-frame" data-region="eu1" data-form-id="dfd98c62-6f8a-4313-b77e-d89e35de9c18" data-portal-id="149067537"></div>
           </div>
           <p class="form-note">
             Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
@@ -2716,26 +2716,7 @@
 
 
   <!-- HubSpot Form Embed -->
-  <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
-  <script>
-    function initTawajaHubspotForm() {
-      if (typeof hbspt === 'undefined' || !hbspt.forms) {
-        setTimeout(initTawajaHubspotForm, 200);
-        return;
-      }
-      hbspt.forms.create({
-        region: "eu1",
-        portalId: "149067537",
-        formId: "REPLACE_WITH_YOUR_HUBSPOT_FORM_ID",
-        target: "#hubspot-form-container",
-        onFormReady: function() {
-          var loading = document.getElementById('hsFormLoading');
-          if (loading) loading.style.display = 'none';
-        }
-      });
-    }
-    initTawajaHubspotForm();
-  </script>
+  <script src="https://js-eu1.hsforms.net/forms/embed/149067537.js" defer></script>
 
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/149067537.js"></script>
