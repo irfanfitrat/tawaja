@@ -1580,6 +1580,31 @@
     }
 
 
+
+    .form-success {
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(37,211,102,0.35);
+      background: rgba(37,211,102,0.08);
+      color: #a7f3d0;
+      font-size: 0.95rem;
+    }
+    .form-error {
+      margin-bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(248,113,113,0.35);
+      background: rgba(248,113,113,0.08);
+      color: #fecaca;
+      font-size: 0.95rem;
+    }
+    .btn-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
     /* HubSpot form container */
     .hubspot-form-wrap {
       min-height: 280px;
@@ -2477,13 +2502,64 @@
 
         <div class="contact-form reveal reveal-delay-1">
           
-          <!-- HubSpot Form -->
-          <div id="hubspot-form-container" class="hubspot-form-wrap">
-            <div class="hs-form-frame" data-region="eu1" data-form-id="dfd98c62-6f8a-4313-b77e-d89e35de9c18" data-portal-id="149067537"></div>
-          </div>
-          <p class="form-note">
-            Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
-          </p>
+          <!-- Custom TAWAJA form → HubSpot CRM -->
+          <form id="contactForm" class="tawaja-form" novalidate>
+            <div id="formSuccess" class="form-success" hidden role="status">
+              Thank you. Your inquiry has been sent. We typically respond within one business day.
+            </div>
+            <div id="formError" class="form-error" hidden role="alert"></div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstname">Name</label>
+                <input type="text" id="firstname" name="firstname" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" autocomplete="organization">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="website">Website <span class="optional">(optional)</span></label>
+              <input type="url" id="website" name="website" placeholder="https://">
+            </div>
+            <div class="form-group">
+              <label for="help_with">What can TAWAJA help you with?</label>
+              <select id="help_with" name="help_with">
+                <option value="">Select an option</option>
+                <option value="Strategy & Positioning">Strategy & Positioning</option>
+                <option value="Brand Identity & Creative">Brand Identity & Creative</option>
+                <option value="Performance Marketing">Performance Marketing</option>
+                <option value="SEO & Content">SEO & Content</option>
+                <option value="Web & Conversion">Web & Conversion</option>
+                <option value="Social & Content">Social & Content</option>
+                <option value="Full growth system">Full growth system</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-primary" id="formSubmitBtn" style="width:100%; justify-content:center;">
+                Send Inquiry
+              </button>
+            </div>
+            <p class="form-note">
+              Prefer email? Write to us at <a href="mailto:info@tawaja.com">info@tawaja.com</a>. We typically respond within one business day.
+            </p>
+          </form>
 
         </div>
       </div>
@@ -2715,8 +2791,90 @@
   </script>
 
 
-  <!-- HubSpot Form Embed -->
-  <script src="https://js-eu1.hsforms.net/forms/embed/149067537.js" defer></script>
+
+  <!-- Custom form → HubSpot CRM submission -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      const PORTAL_ID = '149067537';
+      const FORM_ID = 'dfd98c62-6f8a-4313-b77e-d89e35de9c18';
+      const endpoint = 'https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL_ID + '/' + FORM_ID;
+
+      const successEl = document.getElementById('formSuccess');
+      const errorEl = document.getElementById('formError');
+      const submitBtn = document.getElementById('formSubmitBtn');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (errorEl) { errorEl.hidden = true; errorEl.textContent = ''; }
+        if (successEl) successEl.hidden = true;
+
+        const fd = new FormData(form);
+        const fields = [];
+        fd.forEach(function (value, key) {
+          if (value && String(value).trim() !== '') {
+            fields.push({ name: key, value: String(value).trim() });
+          }
+        });
+
+        // Ensure email is present
+        const email = (fd.get('email') || '').toString().trim();
+        if (!email) {
+          if (errorEl) {
+            errorEl.hidden = false;
+            errorEl.textContent = 'Please enter a valid email address.';
+          }
+          return;
+        }
+
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending…';
+        }
+
+        const payload = {
+          fields: fields,
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title
+          }
+        };
+
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!res.ok) {
+            const errText = await res.text();
+            throw new Error(errText || ('Request failed: ' + res.status));
+          }
+
+          form.reset();
+          if (successEl) {
+            successEl.hidden = false;
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } catch (err) {
+          console.error('HubSpot submit error:', err);
+          if (errorEl) {
+            errorEl.hidden = false;
+            errorEl.textContent = 'Something went wrong. Please email info@tawaja.com or try WhatsApp.';
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Inquiry';
+          }
+        }
+      });
+    })();
+  </script>
+
 
   <!-- Start of HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/149067537.js"></script>
